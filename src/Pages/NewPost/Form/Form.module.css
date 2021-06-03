@@ -1,0 +1,147 @@
+.form {
+    padding: 2% 3%;
+    width: 100%;
+}
+
+.form .col-2{
+    display: flex;
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 0 1 100%;
+    padding-right: 40px;
+}
+
+.field label{
+    font-size: 1em;
+    color: var(--white);
+    margin-bottom: 1rem;
+    margin-top: 1em;
+}
+
+.field input[type='text'], .field textarea{ 
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, .4);
+    transition: all .3s ease-in-out;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-family: 'Poppins';
+  }
+
+.field input[type='number'] {
+    font-weight: 300;
+    cursor: pointer;
+    background: transparent;
+    transition: all .3s ease-in-out;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    padding: 10px;
+    width: min-content;
+    max-width: max-content;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 4px;
+    font-family: 'Poppins';
+}
+  
+.field input[type='text']:nth-child(2), .field input[type='number']:nth-child(2){
+    padding-right: 0;
+}
+  
+.field input[type='text']:focus, .field textarea:focus,
+.field input[type='number']:focus, .field select:focus { 
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--blue);
+}
+  
+.field select {
+    font-family: 'Poppins';
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, .4);
+    transition: all .3s ease-in-out;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.pdanger {
+    color: var(--gray);
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+.images input[type="file"] {
+    background-color: inherit;
+    font-family: 'Poppins';
+}
+
+.field input[type="checkbox"]{
+    margin-right: 450px;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--white);
+}
+
+
+.autocomplete {
+    margin: 5% 0;
+}
+
+.ctnMap {
+    margin: 5% 0;
+}
+
+.mapForm{
+    margin: 2% 0;
+}
+
+.allowAddress {
+    margin-left: 0.5em;
+}
+
+.confirm {
+    width: 25%;
+    height: 2em;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    font-family: 'Poppins';
+    margin-left: 300px !important;
+    color: var(--white);
+    border: 2px solid var(--blue);
+    background: var(--blue);
+    float: right;
+    margin: 0;
+}
+
+.confirm:hover{
+    border: 2px solid var(--dark);
+    background: var(--dark);
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 430px) {
+
+    .field input[type='text'], .field input[type='number'],
+    .field select, .field textarea {
+      font-size: 0.7rem;
+      padding: 0;
+    }
+  }

@@ -1,0 +1,94 @@
+.closeFilter {
+    transform: translateX(0px);
+    /* transform: translateX(400px); */
+}
+
+.openFilter {
+    transform: translateX(-400px);
+    /* transform: translateX(0px); */
+}
+
+.normal {
+    display: none;
+}
+
+#filtersSide {
+    position: absolute;
+    top: 0;
+    right: -490px;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+#filtersSide form{
+    width: 80%;
+}
+
+#area {
+    width: 80%;
+    display: flex;
+}
+
+.ctnBack{
+    border: 2px solid var(--blue);
+    background: var(--white);
+    cursor:  pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.back {
+    background: transparent;
+    border: none;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 6px;
+    font-family: 'Poppins';
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+}
+.back:hover {
+    background: var(--dark);
+    box-shadow: var(--blackhadow);
+    transition: all 0.1s ease-in-out;
+    color: var(--white);
+    border: 2px solid var(--dark);
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    #filtersSide {
+        right: -450px;
+    }
+    
+    .closeFilter {
+        display: none;
+        transform: translateX(0px);
+        /* transform: translateX(400px); */
+    }
+    
+    .openFilter {
+        display: block;
+        transform: translateX(-400px);
+        /* transform: translateX(0px); */
+    }
+}

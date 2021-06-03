@@ -1,0 +1,25 @@
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--light-blue);
+    font-family: 'Poppins';
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 4% 5%;
+    width: 150px;
+    height: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
+    transition: all .3s ease-in-out;
+    border: 2px solid var(--light-blue);
+  }
+  .signup:hover {
+    border: none;
+    transition: all .1s ease-in-out;
+    background-color: var(--blue);
+    border: 2px solid var(--blue);
+  }

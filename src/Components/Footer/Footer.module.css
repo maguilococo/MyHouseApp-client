@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark);
+    justify-content: center; 
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.ctn{
+   
+}
+
+.title{
+    display: flex;
+    color: var(--white);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.disclaimer{
+    display: flex;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+}

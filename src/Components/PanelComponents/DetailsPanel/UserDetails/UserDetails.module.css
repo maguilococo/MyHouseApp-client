@@ -1,0 +1,35 @@
+.ctn {
+  width: 95%;
+  margin: 15px auto;
+  background-color: var(--white);
+  text-align: justify;
+  padding: 50px 0;
+  box-shadow: 2px 4px 6px 3px var(--blackShadow);
+  display: flex;
+  flex-wrap: wrap;
+}
+.divImg {
+  width: 50%;
+  padding: 5%;
+}
+.img {
+    width: 70%;
+}
+.divInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin: auto 0;
+}
+
+.divInfo h4{
+  margin: 10px 0;
+}
+
+.divInfo h1{
+  margin: 15px 0;
+}

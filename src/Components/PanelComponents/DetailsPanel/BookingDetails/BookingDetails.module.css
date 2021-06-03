@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 4% 4%;
+
+    /* border: solid red 4px;
+    border-radius: 1.25rem; */
+    /* background-color: white; */
+    padding: 2.5rem;
+
+    /* background-color: #ffffff; */
+    border: solid 3px #d0d0d0;
+    border-radius: 12px;
+    display: block;
+    overflow: hidden;
+
+  }
+
+  .logo{
+      width: 10rem;
+  }
+
+  .header{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .headerText{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 24px;
+  }
+
+  .bodyBookingHeader{
+    background-color: #146880;
+    /* margin: 1.25rem; */
+    padding: 0.5rem;
+    border-radius: 0.49rem 0.5rem 0 0;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    color: white;
+    z-index: -100;
+  }
+
+  .selectStatus{
+    color: #67c1f5 !important;
+    /* color: honeydew; */
+    background-color: rgba(20, 29, 37, 0.2);
+    /* background-color: rgba(20, 29, 37, 0.2); */
+    border: none;
+    box-sizing: border-box;
+    /* margin: 20px auto; */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom,rgba( 103, 193, 245, 0.2 ) 0%,rgba( 103, 193, 245, 0.2 ) 100%);
+    background-repeat: no-repeat, repeat;
+    /* background-position: right .7em top 50%, 0 0; */
+    /* background-size: .65em auto, 100%; */
+  }
+  
+  .selectStatus:hover{
+      color: white !important;
+      background-color:#213c58;
+      border: none;
+  }
+  
+  .selectStatus:hover {
+      background: rgb(28,110,164);
+      background: -moz-linear-gradient(-45deg, rgb(28,110,164) 0%, rgb(35,136,203) 23%, rgb(17,66,99) 100%);
+      background: -webkit-linear-gradient(-45deg, rgb(28,110,164) 0%, rgb(35,136,203) 23%, rgb(17,66,99) 100%);
+      background: linear-gradient(135deg, rgb(28,110,164) 0%, rgb(35,136,203) 23%, rgb(17,66,99) 100%); 
+      background-color:rgb(28,110,164);;  
+  }

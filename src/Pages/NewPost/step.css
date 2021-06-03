@@ -1,0 +1,190 @@
+.step_form {
+  background-color: var(--white);
+  background-image: url('../../images/step_form/form_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7%;
+/*   width: 100%;*/
+}
+
+.ctn .title {
+  font-family: 'Poppins';
+  color: var(--white);
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.6); 
+  margin-top: 10%;
+  font-size: 2rem;
+}
+
+#content{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.progressbar {
+  counter-reset: step;
+  width: 100%;
+}
+
+.progressbar li {
+  list-style-type: none;
+  width: 16.5%;
+  float: left;
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  font-family: 'Poppins';
+  margin: 1% 0;
+  position: relative;
+  z-index: 0;
+}
+.progressbar li:before {
+  width: 25px;
+  height: 25px;
+  content: counter(step);
+  counter-increment: step;
+  line-height: 30px;
+  border: 2px solid var(--white);
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: var(--blue);
+  position: relative;
+  z-index: 1;
+}
+.progressbar li:after {
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: var(--white);
+  top: 15px;
+  left: -42.5%;
+  position: absolute;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: var(--white);
+}
+.progressbar li.active:before {
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
+}
+.progressbar li.active + li:after {
+  background-color: var(--light-blue);
+}
+
+
+.steps-content {
+    width: 70%;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 4% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255, 255,.01);
+    font-family: 'Poppins', sans-serif;
+    -webkit-box-shadow: 0px 10px 43px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 43px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 43px 0px rgba(0,0,0,0.75);
+}
+
+#backBtn {
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: 'Poppins';
+  color: var(--white);
+  border: 2px solid var(--dark);
+  background: var(--dark);
+  margin-right: 60% !important;
+  margin-top: -2em !important; 
+}
+#backBtn:hover{
+  border: 2px solid var(--black);
+  background: var(--black);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.nextBtn {
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: 'Poppins';
+  border: 2px solid var(--light-blue) !important;
+  background: var(--light-blue) !important;
+  font-weight: 700 !important;
+  color: var(--white) !important;
+  margin-top: 10%;
+  margin-left: 75%;
+}
+
+.nextBtn:hover {
+  border: 2px solid #3c5c1a !important;
+  color: var(--white) !important;
+  background: #3c5c1a !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+#buttonId {
+  padding: 0px;
+  margin-top: 10%;
+  margin-left: 75%;
+  background: none;
+  border: none;
+}
+
+#buttonId button{
+  border: none !important;
+  color: var(--white) !important;
+  background: #009ee3 !important;
+  transition: all 0.3s ease-in-out !important;
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 15px!important;
+  border: 2px solid #009ee3 !important;
+  font-family: 'Poppins' !important;
+  font-size: 0.85rem !important;
+}
+
+#buttonId  button:hover {
+  border: 2px solid var(--light-blue) !important;
+  color: var(--white) !important;
+  background: var(--light-blue) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+@media only screen and (max-width: 430px) {
+.ctn {
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+.ctn .title {
+  font-size: 1.8rem;
+}
+
+}

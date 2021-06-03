@@ -1,0 +1,23 @@
+.ctn{
+    min-height: 100vh;
+    background-color: #dadada;
+    overflow: hidden;
+
+  }
+  .divScroll {
+    margin-left: 20%;
+    /* min-height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  @media only screen and (max-width: 800px) {
+    .divScroll {
+      margin-left: 7%;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    .divScroll {
+      margin-left: 7%;
+    }
+  }

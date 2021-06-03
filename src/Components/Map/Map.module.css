@@ -1,0 +1,8 @@
+.container {
+    padding: 0;
+}
+
+.marker {
+    color: red;
+    text-shadow: 2px 2px 0px #bdbdbd83;
+}

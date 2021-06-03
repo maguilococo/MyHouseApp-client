@@ -1,0 +1,123 @@
+.ctn{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: var(--white);
+  border-right: 2px solid var(--blackShadow);
+  box-shadow: 2px 8px 6px 3px var(--blackShadow);
+  color: var(--blue);
+  padding: 1%;
+}
+.ctnUser {
+  /* background-color: var(--blue); */
+}
+.ctnFixed {
+  position: fixed;
+  top:0;
+}
+.ctn label{
+  font-size: 12px;
+}
+.ctn p {
+  margin: 10px 0 10px;
+}
+.link {
+  padding: 5px 0px 5px 5px !important;
+  text-decoration: none;
+  color: var(--black);
+}
+.active::before {
+  content: '➤ ';
+  color: var(--blue);
+
+}
+.ctn h4 {
+  font-size: 1.1em;
+  margin: 5% 0;
+}
+
+.ctn h3 {
+  margin: 8% 0;
+}
+.ctn h2 {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 120%;
+  color: var(--dark);
+}
+.divTitle {
+  margin: 7px 0;
+  border-top: 1px solid var(--blackShadow);
+  border-bottom: 1px solid var(--blackShadow);
+  padding-bottom: 5px;
+}
+@media only screen and (max-width: 800px) {
+  .ctn{
+    width: 7%;
+    padding: 1%;
+  }
+  .ctn h2 {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 120%;
+    color: var(--dark);
+  }
+  .ctn label {
+    display: none;
+  }
+  .ctn h3 {
+    display: none;
+  }
+  .link {
+    padding: auto;
+    visibility: hidden;
+  }
+  .icon {
+    visibility: visible;
+  }
+  .active::before {
+    content: '';
+    color: var(--blue);
+  }
+  .active {
+    color: var(--blue);
+  }
+  .divTitle {
+    border-bottom: 0px solid var(--blackShadow);
+  }
+}
+@media only screen and (max-width: 650px) {
+  .ctn{
+    width: 8%;
+    padding: 1%;
+  }
+  .ctn h2 {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 120%;
+    color: var(--dark);
+  }
+  .ctn label {
+    display: none;
+  }
+  .ctn h3 {
+    display: none;
+  }
+  .link {
+    padding: auto;
+    visibility: hidden;
+  }
+  .icon {
+    visibility: visible;
+  }
+  .active::before {
+    content: '';
+    color: var(--blue);
+  }
+  .active {
+    color: var(--blue);
+  }
+  .divTitle {
+    border-bottom: 0px solid var(--blackShadow);
+  }
+}
