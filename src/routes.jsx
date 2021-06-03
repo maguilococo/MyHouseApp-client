@@ -30,7 +30,7 @@ export default function MyHouseRoutes() {
   // Menu will be display in all routes
   return (
     <Router>
-      <div>
+      <div className='soyYo'>
         <SideMenu mobile={mobile} isMobile={isMobile} />
         <NavBar isMobile={isMobile}/>
         <Switch>

@@ -2,10 +2,10 @@ import React from 'react';
 import { withGoogleMap, GoogleMap, InfoWindow, Marker, Circle } from "react-google-maps";
 import Geocode from "react-geocode";
 import Autocomplete from 'react-google-autocomplete';
-import { Descriptions } from 'antd';
 import { connect } from 'react-redux';
 import { addLocation } from '../../Redux/Actions/index';
 import style from '../../Pages/NewPost/Form/Form.module.css'
+import s from './FormMap.module.css';
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAP_API;
 Geocode.setApiKey(apiKey);
@@ -13,27 +13,29 @@ Geocode.enableDebug();
 
 class LocationSearchModal extends React.Component {
     
-    state = {
-        stratum: this.props.location.stratum || 0,
-        street_number: this.props.location.street_number || '',
-        city: this.props.location.city || '',
-        department: this.props.location.department || '',
-        neighborhood: this.props.location.neighborhood || '',
-        latitude: this.props.location.latitude || 0,
-        longitude: this.props.location.longitude || 0,
-        mapPosition: {
-            lat: this.props.location.latitude || 0,
-            lng: this.props.location.longitude || 0,
-        },
-        markerPosition: {
-            lat: this.props.location.latitude || 0, 
-            lng: this.props.location.longitude || 0,
-        },
-        zoom: 15,
-        height: 400,
-        allowAddress: this.props.location.allowAddress || true,
-        confirmed: false,
-        errors: '',
+    constructor (props) {
+        super(props);
+        this.state = {
+            stratum: this.props.location.stratum || 0,
+            street_number: this.props.location.street_number || '',
+            city: this.props.location.city || '',
+            department: this.props.location.department || '',
+            neighborhood: this.props.location.neighborhood || '',
+            latitude: this.props.location.latitude || 0,
+            longitude: this.props.location.longitude || 0,
+            mapPosition: {
+                lat: this.props.location.latitude || 0,
+                lng: this.props.location.longitude || 0,
+            },
+            markerPosition: {
+                lat: this.props.location.latitude || 0, 
+                lng: this.props.location.longitude || 0,
+            },
+            zoom: 15,
+            height: 400,
+            allowAddress: this.props.location.allowAddress || true,
+            confirmed: false,
+        }
     }
 
 
@@ -55,7 +57,7 @@ class LocationSearchModal extends React.Component {
                     lat: this.props.location.latitude, 
                     lng: this.props.location.longitude,
                 },
-                allowAddress: this.props.location.allowAddress,
+                allowAddress: this.props.location.allowAddress
             })
         } else if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
@@ -99,11 +101,11 @@ class LocationSearchModal extends React.Component {
             }
     };
 
-    validate = (state) => {
+   /*  validate = (state) => {
         const errors = {};
         if (!state.stratum) errors.stratum = 'El campo es requerido';
         return errors;
-    }
+    } */
 
     displayAddress = (e) => {
         e.preventDefault();
@@ -113,6 +115,7 @@ class LocationSearchModal extends React.Component {
     confirmAddress = (e) => {
         e.preventDefault();
         this.setState({ confirmed: true })
+        this.state.stratum == 0 && this.setState({stratum: this.state.stratum = 3});
         this.props.addLocation(this.state)
     }
 
@@ -156,7 +159,6 @@ class LocationSearchModal extends React.Component {
 
     onChange = (event) => {
         event.preventDefault();
-        this.setState({ errors: this.validate({ [event.target.name]: event.target.value })})
         this.setState({ [event.target.name]: event.target.value });
     };
 
@@ -206,8 +208,8 @@ class LocationSearchModal extends React.Component {
             latValue = place.geometry.location.lat(),
             lngValue = place.geometry.location.lng();
 
-        console.log('latvalue', latValue)
-        console.log('lngValue', lngValue)
+        // console.log('latvalue', latValue)
+        // console.log('lngValue', lngValue)
 
         // Set these values in the state.
         this.setState({
@@ -247,7 +249,7 @@ class LocationSearchModal extends React.Component {
                                     background: 'transparent',
                                     borderBottom: '2px solid rgba(255, 255, 255, .4)',
                                     transition: 'all .3s ease-in-out',
-                                    color: 'var(--white)',
+                                    color: this.props.edit === 'edit' ? 'var(--dark)' : 'var(--white)',
                                     fontFamily: 'Poppins',
                                     margin: '2% 0',
                                     width: '100%',
@@ -311,29 +313,29 @@ class LocationSearchModal extends React.Component {
         return (
             <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }}>
              <div className={style.col}>
-                <div className={style.field}>
+                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Ciudad</label>
                     <input disabled type='text' value={this.state.city} />
                 </div>
-                <div className={style.field}>
+                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Departamento</label>
                     <input disabled type='text' value={this.state.department} />
                 </div>
-                <div className={style.field}>
+                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Barrio</label>
                     <input disabled type='text' value={this.state.neighborhood} />
                 </div>
-                <div className={style.field}>
+                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Dirección</label>
                     <textarea disabled  type='text' value={this.state.street_number} />
                 </div>
-                <div className={style.field}>
-                    <label>Stratum</label>
+                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
+                    <label>Estrato</label>
                     <input type='number' name="stratum" onChange={this.onChange} value={this.state.stratum} min="0" max="6" />
-                    {this.state.errors.stratum && ( <p className={style.pdanger}>{this.state.errors.stratum}</p>)}
+                    {/* {this.errors.stratum && ( <p className={style.pdanger}>{this.errors.stratum}</p>)} */}
                 </div>  
              </div>
-            <div className={style.field}>
+            <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                 <label htmlFor="allowAddress">Prefiero ocultar mi ubicación
                     <input type="checkbox" className={style.allowAddress} name="allowAddress"
                         checked = {!this.state.allowAddress}

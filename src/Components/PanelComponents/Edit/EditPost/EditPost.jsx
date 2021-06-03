@@ -52,8 +52,8 @@ function EditPosts({ id, action, session, location, addLocation }) {
       latitude: action === 'edit' ? location.latitude : '',
       neighborhood: action === 'edit' ? location.neighborhood : '',
       allowAddress: action === 'edit' ? location.allowAddress : '',
+      stratum: action === 'edit' ? location.stratus : 1,
       description: action === 'edit' ? postDetail.description : '',
-      stratum: action === 'edit' ? postDetail.street_number : 1,
       price: action === 'edit' ? postDetail.price : 1,
       prop_type: action === 'edit' ? postDetail.prop_type : '',
       m2: action === 'edit' ? postDetail.m2 : 1,
@@ -101,9 +101,9 @@ function EditPosts({ id, action, session, location, addLocation }) {
       errors.rooms = 'Las habitaciones son requeridas';
     } else if (!input.bathrooms) {
       errors.bathrooms = 'Los baños son requeridos';
-    } else if (input.stratum > 6) {
+    } /* else if (input.stratum > 6) {
       errors.stratum = '6 es el estrato máximo';
-    }
+    } */
     return errors;
   }
   function handleChange(e) {
@@ -121,6 +121,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
       })
     );
   }
+  
   function onClickDelete(imageToDelete) {
     let photos;
     let imagesContainer = input.images;
@@ -153,7 +154,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
       });
     } else {
       if (action === 'edit') {
-        if (errors === '') {
+        /* if (errors === '') {
           <Link to='/panel' />;
           return Swal.fire({
             icon: 'info',
@@ -161,7 +162,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
             showConfirmButton: false,
             timer: 1500,
           });
-        } else {
+        } else { */
           return editPostService(id, input)
             .then(() => {
               Swal.fire({
@@ -172,7 +173,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
               });
             })
             .catch((e) => console.log(e));
-        }
+        // }
       } else if (action === 'create') {
         if (errors === '') {
           return Swal.fire({
@@ -246,7 +247,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
             {errors.post_name && (
               <p className={style.pdanger}>{errors.post_name}</p>
             )}
-            {isAdmin && (
+            {/* {isAdmin && (
               <>
                 <div className={style.field}>
                   <label htmlFor='premium'> Plan contratado</label>
@@ -268,7 +269,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
                   <p className={style.pdanger}>{errors.premium}</p>
                 )}
               </>
-            )}
+            )} */}
             {isAdmin && (
               <>
                 <div className={style.field}>
@@ -293,7 +294,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 )}
               </>
             )}
-            <FormMap />
+            <FormMap edit={"edit"} />
             <div className={style.field}>
               <label htmlFor='price'>Precio</label>
               <input
@@ -467,7 +468,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
               />
               <label htmlFor='garden'> Jardín</label>
             </div>
-            <div className={style.btnReset}>
+            {/* <div className={style.btnReset}>
               <button
                 className={style.btn}
                 type='button'
@@ -476,7 +477,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 <FontAwesomeIcon icon={faEraser} />
                 {'  Borrar'}
               </button>
-            </div>
+            </div> */}
           </form>
         </>
       )}

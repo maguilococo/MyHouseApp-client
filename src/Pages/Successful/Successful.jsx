@@ -13,6 +13,7 @@ import {
 } from '../../Services/properties.service';
 import style from './Successful.module.css';
 import Swal from 'sweetalert2';
+import Loading from '../../Components/Auth0/Loading/loading';
 
 const Successful = () => {
   const { REACT_APP_API_BASE_ENDPOINT } = process.env;
@@ -114,7 +115,7 @@ const Successful = () => {
 
   return (
     <div className={style.ctn}>
-      {!order ? <h1>Cargando...</h1>
+      {!order ? <Loading />
         :<div className={style.success}>
         <img src={image} alt='img' className={style.img}/>
         <div className={style.divCheck}><h1 className={style.check}><FontAwesomeIcon icon={faCheck} /></h1></div>
