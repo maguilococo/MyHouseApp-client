@@ -19,10 +19,10 @@ const InputComponents = {
   },
   text: (field, ...args) => {
     const [componetConfig] = args;
-    const { type } = componetConfig;
+    const { type, min, max } = componetConfig;
 
     if (type === 'number') {
-      return <input type={type} min='0' {...field} />;
+      return <input type={type} min={min} max={max ? max : null} {...field} />;
     }
     return <input type={type} {...field} />;
   },
