@@ -77,7 +77,7 @@ function PostDetails() {
               <p className={styles.price}>{`$${new Intl.NumberFormat(
                 'de-DE'
               ).format(postDetails.price)}`}</p>
-              <p>{postDetails.description}</p>
+              <p className={styles.description}>{postDetails.description}</p>
             </div>
           </article>
         </div>
