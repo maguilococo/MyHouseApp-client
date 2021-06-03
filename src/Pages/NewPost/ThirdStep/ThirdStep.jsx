@@ -20,7 +20,7 @@ const ThirdStep = () => {
         {current < steps.length - 1 && (
           <button id='nextBtn' className='stepsActions nextBtn'
           onClick={() =>{
-            (Object.values(location).length < 0 || location.errors !== '') ?
+            (Object.values(location).length < 0 ) ?
             Swal.fire({
               icon: 'warning',
               title: `Debes confirmar la ubicación para poder avanzar`,
