@@ -16,7 +16,8 @@ function SideMenu({ userInfo, getGoogleUser, userSession, mobile, isMobile }) {
             const googleUser = {
                 name: user.name,
                 email: user.email,
-                externalId: user.sub
+                externalId: user.sub,
+                photo: user.picture,
             }
             getGoogleUser(googleUser);
             } else {
