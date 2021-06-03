@@ -42,7 +42,7 @@ class LocationSearchModal extends React.Component {
     componentDidMount() {
         if (Object.values(this.props.location).length > 0) {
             this.setState({
-                stratum: this.props.location.stratum || '',
+                // stratum: this.props.location.stratum || '',
                 street_number: this.props.location.street_number,
                 city: this.props.location.city,
                 department: this.props.location.department,
@@ -115,7 +115,7 @@ class LocationSearchModal extends React.Component {
     confirmAddress = (e) => {
         e.preventDefault();
         this.setState({ confirmed: true })
-        this.state.stratum == 0 && this.setState({stratum: this.state.stratum = 3});
+        // this.state.stratum == 0 && this.setState({stratum: this.state.stratum = 3});
         this.props.addLocation(this.state)
     }
 
@@ -329,11 +329,10 @@ class LocationSearchModal extends React.Component {
                     <label>Dirección</label>
                     <textarea disabled  type='text' value={this.state.street_number} />
                 </div>
-                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
+                {/* <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Estrato</label>
                     <input type='number' name="stratum" onChange={this.onChange} value={this.state.stratum} min="0" max="6" />
-                    {/* {this.errors.stratum && ( <p className={style.pdanger}>{this.errors.stratum}</p>)} */}
-                </div>  
+                </div>   */}
              </div>
             <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                 <label htmlFor="allowAddress">Prefiero ocultar mi ubicación

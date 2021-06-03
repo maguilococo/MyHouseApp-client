@@ -52,6 +52,10 @@
   margin-left: 0.5em;
   color: goldenrod;
 }
+.views {
+  color: gray;
+}
+
 .eye{
   margin-right: 0.3em;
 }
