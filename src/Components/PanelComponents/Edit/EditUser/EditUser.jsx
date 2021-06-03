@@ -79,7 +79,7 @@ function EditUser({ session, id, action }) {
       })
     } else {
       if (action === 'edit') {
-        if (errors === '') {
+       /*  if (errors === '') {
           <Link to="/panel" />
           return Swal.fire({
             icon: 'info',
@@ -87,11 +87,12 @@ function EditUser({ session, id, action }) {
             showConfirmButton: false,
             timer: 1500
           })
-        } else {
+        } else { */
           return editUserService(id, input).then(  () => {
+            console.log('EDIT USER ',input)
             Swal.fire({
               icon: 'success',
-              title: `Usuario ${input.name} editado correctamente `,
+              title: `Usuario editado correctamente `,
               showConfirmButton: true,
               // timer: 2000
             })
@@ -99,7 +100,7 @@ function EditUser({ session, id, action }) {
           })
           .catch(e=>console.log(e));
           
-        }
+      //  }
       } else if (action === 'create') {
         if (errors === '') {
           return Swal.fire({

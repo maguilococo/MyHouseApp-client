@@ -36,7 +36,7 @@ function NavBar({ userInfo, getGoogleUser, userSession, isMobile }) {
       <div className={style.menu}>
         <div className={style.opt}>
           <NavLink to="/create" className={style.link} activeClassName={style.active}>Publicar</NavLink>
-          <NavLink to="/home" className={style.link} activeClassName={style.active}>Home</NavLink>
+          <NavLink to="/home" className={style.link} activeClassName={style.active}>Inicio</NavLink>
           {isAuthenticated && <NavLink to="/panel/user" className={style.link} activeClassName={style.active}>Mi cuenta</NavLink>}
         </div>
         <div className={style.authNav}>

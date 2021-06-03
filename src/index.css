@@ -12,6 +12,7 @@
 html {
   height:100vh;
   overflow-y: scroll;
+  width: 100%
 }
 
 body {
@@ -20,11 +21,25 @@ body {
   color: var(--black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* width: 100%; */
 }
 
 .app {
+  width: 100%;
   height: 100vh;
+/*   min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; */
 }
+
+/* .soyYo{
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+} */
 
 :root {
   --blackShadow: #00000049;
