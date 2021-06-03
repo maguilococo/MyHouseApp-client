@@ -56,7 +56,9 @@ const Successful = () => {
      })
      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
-  const post = {
+   let post = {}
+  if (postDetails){
+    post = {
     name: user.name,
     email: user.email,
     title: postDetails.post_name,
@@ -64,8 +66,8 @@ const Successful = () => {
     price: plans[0]?.price,
     plan: postDetails.premium ? 'Premium' : 'Basic',
     date: expirationDate,
-  };
-
+    };
+  }
   useEffect(() => {
     (async function(){
       if(session.id && localStorage.getItem('local') !== payment_id){
@@ -83,6 +85,7 @@ const Successful = () => {
           // const r = await axios.post(`http://localhost:3001/mercadopago/order`, obj)
           setOrder(r.data.length ? r.data.filter((e) => e.id === external_reference) : r.data.id);
           localStorage.setItem('local', payment_id )
+          localStorage.removeItem('post');
       }
       if(localStorage.getItem('local')){
         setOrder(merchant_order_id)
