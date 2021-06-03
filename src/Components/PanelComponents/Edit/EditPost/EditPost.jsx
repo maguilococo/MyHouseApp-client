@@ -52,7 +52,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
       latitude: action === 'edit' ? location.latitude : '',
       neighborhood: action === 'edit' ? location.neighborhood : '',
       allowAddress: action === 'edit' ? location.allowAddress : '',
-      stratum: action === 'edit' ? location.stratus : 1,
+      stratum: action === 'edit' ? postDetail.stratus : '',
       description: action === 'edit' ? postDetail.description : '',
       price: action === 'edit' ? postDetail.price : 1,
       prop_type: action === 'edit' ? postDetail.prop_type : '',
@@ -101,9 +101,9 @@ function EditPosts({ id, action, session, location, addLocation }) {
       errors.rooms = 'Las habitaciones son requeridas';
     } else if (!input.bathrooms) {
       errors.bathrooms = 'Los baños son requeridos';
-    } /* else if (input.stratum > 6) {
+    } else if (input.stratum > 6) {
       errors.stratum = '6 es el estrato máximo';
-    } */
+    }
     return errors;
   }
   function handleChange(e) {
@@ -154,22 +154,12 @@ function EditPosts({ id, action, session, location, addLocation }) {
       });
     } else {
       if (action === 'edit') {
-        /* if (errors === '') {
-          <Link to='/panel' />;
-          return Swal.fire({
-            icon: 'info',
-            title: `No se han realizado modificaciones`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        } else { */
           return editPostService(id, input)
             .then(() => {
               Swal.fire({
                 icon: 'success',
                 title: `Publicación ${input.post_name} editado correctamente `,
                 showConfirmButton: true,
-                // timer: 2000
               });
             })
             .catch((e) => console.log(e));
@@ -189,7 +179,6 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 icon: 'success',
                 title: `Publicación ${input.post_name} creada correctamente `,
                 showConfirmButton: true,
-                // timer: 2000
               });
             })
             .catch((e) => console.log(e));
@@ -200,7 +189,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
 
   valueTypes(input);
 
-  function resetForm(e) {
+/*   function resetForm(e) {
     e.preventDefault();
     setInput({
       premium: '',
@@ -221,7 +210,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
       security: false,
     });
     document.getElementById('form').reset();
-  }
+  } */
 
   const [display, setDisplay] = useState(false);
   return (
