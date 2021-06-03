@@ -36,8 +36,9 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid var(--dark);
+  border: 1px solid var(--white);
   border-radius: 25px;
+  color: var(--white);
 }
 .divDetails {
   width: 50%;
@@ -53,12 +54,15 @@
   font-size: 90%;
 }
 .divDetails2 div {
-    border-left: 1px solid var(--blackShadow);
+    border-left: 1px solid var(--white);
     padding: 5px 5px 5px 10px;
 }
 .dicon{
   margin-left: 5px;
-  color: var(--dark);
+  color: var(--white);
+}
+.description {
+  color: var(--white);
 }
 .address_detail {
   display: flex;
@@ -110,15 +114,16 @@
 }
 
 .facilities_container .tit{
-  margin: 1%;
+  margin: 1% 1% 10px 1%;
   font-size: 1.5rem;
   color: var(--dark);
 }
 
 .facility{
   width: 50%;
-  margin-bottom: 1rem;
+  margin: 0px auto 1rem auto;
   text-align: left;
+  color: var(--white);
 }
 .facilities {
   width: 100%;
