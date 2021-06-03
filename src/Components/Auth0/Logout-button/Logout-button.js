@@ -13,7 +13,7 @@ const LogoutButton = () => {
         returnTo: window.location.origin,
       })}
     >
-      Log Out
+      Salir
     </button>
   );
 };
