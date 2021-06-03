@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
 import MyHouseRoutes from '../routes';
 import Loading from '../Components/Auth0/Loading/loading';
+import Footer from '../Components/Footer/Footer';
 
 function App() {
   const { isLoading } = useAuth0();
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className='app'>
       <MyHouseRoutes />
+      <Footer/>
     </div>
   );
 }

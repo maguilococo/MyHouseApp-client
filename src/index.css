@@ -5,8 +5,8 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-  align-content: center;
-  justify-content: center;
+  /* align-content: center;
+  justify-content: center; */
 }
 
 html {
@@ -21,26 +21,21 @@ body {
   color: var(--black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
   /* width: 100%; */
 }
 
 .app {
+  margin: 0px;
   width: 100%;
-  height: 100vh;
-/*   min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative; */
-}
-
-/* .soyYo{
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  width: 100%;
-} */
+}
 
+.soyYo{
+  width: 100%;
+}
 :root {
   --blackShadow: #00000049;
   --gray: ;
