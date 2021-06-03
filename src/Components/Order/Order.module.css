@@ -1,0 +1,66 @@
+.selectNav select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: var(--white);
+    background-image: none;
+    flex: 1;
+    padding: 2px .6em;
+    color: var(--blue);
+    cursor:pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.selectMenu {
+    background-color: var(--white);
+    height: 2.4em;
+    width: 10em;
+    border-radius: 20px;
+    border: 2px solid var(--blue);
+    display: flex;
+    position: relative;
+    line-height: 2.1;
+    overflow: hidden;
+    
+ }
+ .selectMenu::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    color: var(--blue);
+    background: var(--white);
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+
+ .selectMenu:hover::after {
+    color: var(--white);
+    background: var(--blue);
+    transition:.2s all ease;
+ }
+
+
+ @media screen and (max-width: 768px) {
+    .selectNav select {
+        padding: 1px .2em;
+        font-size: 0.9em;
+    }
+    .selectNav option {
+        font-size: 0.9em;
+    }
+    .selectMenu::after {
+        padding: 0 0.4em;
+    }
+ }

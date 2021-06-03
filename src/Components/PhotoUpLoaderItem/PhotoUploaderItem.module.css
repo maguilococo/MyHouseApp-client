@@ -1,0 +1,14 @@
+.itemsContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: max-content;
+  align-items: center;
+  justify-items: end;
+}
+img {
+  width: 65%;
+}
+.imageItem {
+  width: 80%;
+}

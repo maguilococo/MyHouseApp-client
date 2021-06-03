@@ -1,0 +1,17 @@
+.ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    color: var(--dark);
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.version {
+    font-size: 1.2rem;
+    color: var(--blue);
+}

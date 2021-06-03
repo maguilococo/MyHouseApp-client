@@ -1,0 +1,104 @@
+.ctn {
+  width: 95%;
+  height: auto;
+  margin: 15px auto;
+  background-color: var(--white);
+  text-align: justify;
+  box-shadow: 2px 4px 6px 3px var(--blackShadow);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 25px;
+  padding: 20px 20px 12%;
+}
+.success {
+  background-color: #43a647;
+  border-radius: 25px;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+.success h1 {
+  color: var(--white);
+  font-size: 100;
+}
+.success h2 {
+  color: var(--white);
+}
+.img {
+  width: 15%;
+}
+.divCheck {
+  display: flex;
+}
+.check {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+}
+.divInfo {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto auto -10%;
+  background-color: var(--white);
+  box-shadow: 2px 4px 6px 0.2px var(--blackShadow);
+  border-radius: 25px;
+  padding: 15px;
+}
+.divInfo h1 {
+  color: black;
+}
+.divInfo button {
+  width: 200px;
+  margin: 5px auto;
+  border-radius: 20px;
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  color: var(--white);
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 1px var(--blackShadow);
+}
+.divInfo button:hover {
+  background: var(--dark);
+  box-shadow: 1px 1px 0px #bdbdbd;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--dark);
+}
+.buttonExit {
+  background-color: var(--white) !important;
+  border: 1px solid var(--blue);
+  color: var(--blue) !important;
+}
+.buttonExit:hover {
+  background: var(--dark) !important;
+  box-shadow: 1px 1px 0px #bdbdbd !important;
+  transition: all 0.3s ease-in-out !important;
+  border: 1px solid var(--dark);
+  color: var(--white) !important;
+}
+@media only screen and (max-width: 800px) {
+  .divInfo {
+    width: 80%;
+    margin: auto auto -15%;
+    padding: 15px;
+  }
+  .img {
+    width: 28%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .ctn {
+    width: 97%;
+    padding: 20px 20px 60%;
+  }
+  .divInfo {
+    width: 100%;
+    margin: auto auto -70%;
+    padding: 20px;
+  }
+  .img {
+    width: 48%;
+  }
+}

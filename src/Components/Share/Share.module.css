@@ -1,0 +1,84 @@
+.ctn {
+  width: 40px;
+  height: 40px;
+  margin: auto 0px auto;
+}
+.checkbox {
+  display: none;
+}
+.ctn label{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: 100%;
+}
+.checkbox:checked ~ label {
+  background-color: var(--dark);
+  color: var(--white);
+  border: 3px solid var(--dark);
+  transition: all 0.5s ease-in-out;
+  width: 70%;
+  height: 70%;
+  position: relative;
+}
+
+.checkbox:checked ~ .nav{
+  visibility: visible;
+  transform: translate(-130%, 15%);
+}
+.checkbox:checked ~ .nav2 {
+  visibility: visible;
+  transform: translate(0%, -50%) !important;
+}
+.checkbox:checked ~ .nav3 {
+  visibility: visible;
+  transform: translate(-140%, -320%) !important;
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  background-color: var(--white);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--dark);
+  border-radius: 100%;
+}
+.nav2 {
+
+}
+.nav3 {
+
+}
+.nav:hover {
+  background-color: #00acee;
+  border: 2px solid #00acee;
+}
+.nav2:hover {
+  background-color: #00bb2d !important;
+  border: 2px solid #00bb2d !important;
+}
+.nav3:hover {
+  background-color: #3b5998 !important;
+  border: 2px solid #3b5998 !important;
+}
+.a {
+  color: var(--dark);
+}
+.a:hover {
+  color: var(--white);
+}
+.logo {
+  position: relative;
+  top: 4px !important;
+}

@@ -1,0 +1,115 @@
+.ctn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px 7px #00000027;
+  margin: 5% 0;
+}
+.imgCtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  height: 14em;
+}
+
+.imgCtn img{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18em;
+  height: 14em;
+  border: none;
+  border-radius: 19px 0 0 19px;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 65%;
+  border-radius: 0 20px 20px 0;
+  background-color: var(--white);
+}
+
+.propTitle {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 3% 3% 0 3%;
+}
+
+.propTitle .title h3{
+  color: var(--blue);
+}
+
+.propTitle .premium .crown {
+  margin-right: 4%;
+  margin-left: 0.5em;
+  color: goldenrod;
+}
+.eye{
+  margin-right: 0.3em;
+}
+.general {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 3%;
+}
+
+.general .price h3 {
+  color: var(--light-blue);
+}
+
+.general .details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 6em;
+  width: 100%;
+}
+
+.general .details .description {
+  color: rgba(53, 53, 53, 0.808);
+}
+
+.details .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.details .icons .icon{
+  margin: 1em 2em 1em 0.5em;
+}
+
+.ctn:hover {
+  border: 2px solid var(--blue);
+  transform: scale(1.01);
+  transition: all 0.1s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .ctn {
+    margin: 10% 10%;
+    height: 12em;
+    border-radius: 17px;
+  }
+
+  .ctn .imgCtn, .ctn .imgCtn img {
+    height: 12em;
+    border-radius: 17px;
+  }
+
+  .texts {
+    font-size: 0.7em;
+  }
+}

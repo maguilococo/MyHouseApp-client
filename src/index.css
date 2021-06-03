@@ -1,0 +1,74 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  align-content: center;
+  justify-content: center;
+}
+
+html {
+  height:100vh;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  height: 100vh;
+}
+
+:root {
+  --blackShadow: #00000049;
+  --gray: ;
+  --black: #060606;
+  --dark: #0F1A28;
+  --blue: #0578AC;
+  --bright: #7de2d1;
+  --light-blue: #679436;
+  --white: #fffafb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.spinner {
+  position: absolute;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+}
