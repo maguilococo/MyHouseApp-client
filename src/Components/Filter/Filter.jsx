@@ -187,6 +187,7 @@ function Filter({
             />
           </div>
         </div>
+      <button type='submit' onClick={e => e.preventDefault()} style={{display: 'none'}}></button>
 
         {/* Rooms  */}
         <div className={style.field}>
@@ -196,13 +197,31 @@ function Filter({
           <div className={style.buttons}>
             {['+1','+2','+3','+4','+5','+6'].map(
               (el, index) => 
-              <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="rooms"
+             /*  <button className={ el[1] === queryBlock.rooms ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="rooms"
               onClick={(e) =>{e.preventDefault(); changeURL(e);}} value={el[1]}
               onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
               >
                 {el}
-              </button>
-            )}
+              </button> */
+              el.split('+')[1] === queryBlock.rooms
+                ? (
+                  <button  className={`${style.btnFilter} ${style.btnFilterActive}`} key={index} name="rooms"
+                    onClick={(e) => { e.preventDefault(); changeURL(e); }} value={el[1]}
+                    // onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                  >
+                    {el}
+                  </button>
+                )
+                : (
+                  <button className={style.btnFilter} key={index} name="rooms"
+                    onClick={(e) => { e.preventDefault(); changeURL(e); }} value={el[1]}
+                    // onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                  >
+                    {el}
+                  </button>
+                )
+            )
+            }
           </div>
         </div>
 
@@ -214,7 +233,7 @@ function Filter({
           <div className={style.buttons}>
             {['+1','+2','+3','+4','+5','+6'].map(
               (el, index) => 
-                <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="bathrooms"
+                <button className={ el[1] === queryBlock.bathrooms ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="bathrooms"
                 onClick={(e) =>{e.preventDefault(); changeURL(e);}} value={el[1]}
                 onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
                 >
@@ -232,7 +251,7 @@ function Filter({
         </div>
         <div class={style.rangeSlider}>
           <span id="rsBullet" class={style.rsLabel}>0 m²</span>
-          <input id="rsRangeLine" class={style.rsRange} type="range" name="areaMin" defaultValue="0" /* value={queryBlock.areaMin} */
+          <input id="rsRangeLine" className={style.rsRange} type="range" name="areaMin" defaultValue="0" /*  value={queryBlock.areaMin}*/
             onChange={showSliderValue}
             onMouseUp={changeURL} min="0" max="1000" />
         </div>
@@ -248,7 +267,7 @@ function Filter({
           <div className={style.buttons}>
             {[1,2,3,4,5,6].map(
               (el, index) => 
-                <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="stratum"
+                <button className={ el == queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="stratum"
                 onClick={(e) =>{e.preventDefault(); changeURL(e);}} value={el}
                 onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
                 >
@@ -289,28 +308,28 @@ function Filter({
           </p>
         </div>
         <div className={display ? style.facilities : style.noFacilities}>
-          <input type="checkbox" onChange={changeURL} name="pool" value={!queryBlock.pool} />
+          <input type="checkbox" checked={queryBlock.pool} onChange={changeURL} name="pool" value={!queryBlock.pool} />
           <label htmlFor="pool"> Piscina</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="backyard" value={!queryBlock.backyard} />
+          <input type="checkbox" checked={queryBlock.backyard} onChange={changeURL} name="backyard" value={!queryBlock.backyard} />
           <label htmlFor="backyard"> Patio</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="gym" value={!queryBlock.gym} />
+          <input type="checkbox" checked={queryBlock.gym} onChange={changeURL} name="gym" value={!queryBlock.gym} />
           <label htmlFor="gym"> Gimnasio</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="bbq" value={!queryBlock.bbq} />
+          <input type="checkbox" checked={queryBlock.bbq} onChange={changeURL} name="bbq" value={!queryBlock.bbq} />
           <label htmlFor="bbq"> Barbecue</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="parking_lot" value={!queryBlock.parking_lot} />
+          <input type="checkbox" checked={queryBlock.parking_lot} onChange={changeURL} name="parking_lot" value={!queryBlock.parking_lot} />
           <label htmlFor="parking_lot"> Cochera</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="elevator" value={!queryBlock.elevator} />
+          <input type="checkbox" checked={queryBlock.elevator} onChange={changeURL} name="elevator" value={!queryBlock.elevator} />
           <label htmlFor="elevator"> Ascensor</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="security" value={!queryBlock.security} />
+          <input type="checkbox" checked={queryBlock.security} onChange={changeURL} name="security" value={!queryBlock.security} />
           <label htmlFor="secutiry"> Seguridad</label>
           <br />
-          <input type="checkbox" onChange={changeURL} name="garden" value={!queryBlock.garden} />
+          <input type="checkbox" checked={queryBlock.garden} onChange={changeURL} name="garden" value={!queryBlock.garden} />
           <label htmlFor="garden"> Jardín</label>
         </div>
         <div className={style.btnReset}>

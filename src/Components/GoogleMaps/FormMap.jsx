@@ -208,9 +208,6 @@ class LocationSearchModal extends React.Component {
             latValue = place.geometry.location.lat(),
             lngValue = place.geometry.location.lng();
 
-        // console.log('latvalue', latValue)
-        // console.log('lngValue', lngValue)
-
         // Set these values in the state.
         this.setState({
             street_number: (street_number) ? street_number : '',

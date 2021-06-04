@@ -26,6 +26,11 @@
   text-decoration: none;
   color: var(--black);
 }
+.link:hover {
+  font-size: 1.04rem;
+  transition: all .2s ease-in-out;
+}
+
 .active::before {
   content: '➤ ';
   color: var(--blue);
@@ -35,15 +40,21 @@
   font-size: 1.1em;
   margin: 5% 0;
 }
-
+ 
 .ctn h3 {
   margin: 8% 0;
 }
+
 .ctn h2 {
   margin-top: 15px;
   text-align: center;
   font-size: 120%;
   color: var(--dark);
+}
+
+.ctn h2 :hover {
+  font-size: 1.3rem !important;
+  transition: all .2s ease-in-out !important;
 }
 .divTitle {
   margin: 7px 0;

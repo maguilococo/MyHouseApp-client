@@ -11,6 +11,7 @@ import SliderCarousel from '../../../Components/SliderCarousel/SliderCarousel';
 import styles from './Checkout.module.css';
 import GoogleMap from '../../../Components/GoogleMaps/GoogleMap';
 
+
 function PostDetails() {
   const { postDetails } = useCreatePost();
   return (

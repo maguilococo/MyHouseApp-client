@@ -45,13 +45,13 @@ function Orders({ sorting, filter }) {
             <option name="price_ASC" value="price_ASC">- a +</option>
             <option name="price_DESC" value="price_DESC">+ a -</option>
           </optgroup>
-          <optgroup label="Habitaciones">
-            <option name="rooms_ASC" value="rooms_ASC">- a +</option>
-            <option name="rooms_DESC" value="rooms_DESC">+ a -</option>
-          </optgroup>
           <optgroup label="Visitas">
             <option name="views_ASC" value="views_ASC">- a +</option>
             <option name="views_DESC" value="views_DESC">+ a -</option>
+          </optgroup>
+          <optgroup label="Habitaciones">
+            <option name="rooms_ASC" value="rooms_ASC">- a +</option>
+            <option name="rooms_DESC" value="rooms_DESC">+ a -</option>
           </optgroup>
         </select>
       </div>
