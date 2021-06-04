@@ -4,17 +4,21 @@ import { filesQuantityChecker, fileSizeChecker } from '../../utils';
 import PhotoUpLoaderItem from '../PhotoUpLoaderItem/PhotoUpLoaderItem';
 
 const EditPhotoUploader = ({
-  imagesContainer,
+  imagesContainer = [],
   onChangeImage,
   onClickDelete,
   limit,
 }) => {
-  let photos;
-  if (typeof imagesContainer[0] === 'string') {
+  let photos = [];
+  if (imagesContainer && typeof imagesContainer[0] === 'string') {
     photos = imagesContainer;
   } else {
-    const [imagesObj] = imagesContainer;
-    photos = imagesObj.photo;
+    try {
+      const [imagesObj] = imagesContainer;
+      photos = imagesObj.photo;
+    } catch {
+      photos=[];
+    }
   }
 
   const handlerOnChange = async (event) => {
