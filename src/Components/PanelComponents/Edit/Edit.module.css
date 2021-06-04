@@ -1,5 +1,6 @@
 .ctn{
     margin: auto auto;
+    border: 2px solid red;
 }
 
 .ctn .form {
@@ -8,6 +9,7 @@
     align-items: flex-start;
     justify-content: center;
     margin: 2% 10%;
+    border: 2px solid blue;
 }
 
 .ctn .form .field {

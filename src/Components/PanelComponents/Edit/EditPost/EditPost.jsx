@@ -17,7 +17,7 @@ import { addLocation } from '../../../../Redux/Actions/index';
 import Loading from '../../../Auth0/Loading/loading';
 import EditButtonBar from '../../ButtonsBar/EditButtonBar/EditButtonBar';
 import FormMap from '../../../GoogleMaps/FormMap';
-import style from '../Edit.module.css';
+import style from './EditPost.module.css';
 import EditPhotoUploader from '../../../EditPhotoUploader/EditPhotoUploarder';
 import Swal from 'sweetalert2';
 
@@ -121,7 +121,7 @@ function EditPosts({ id, action, session, location, addLocation }) {
       })
     );
   }
-  
+
   function onClickDelete(imageToDelete) {
     let photos;
     let imagesContainer = input.images;
@@ -224,18 +224,21 @@ function EditPosts({ id, action, session, location, addLocation }) {
             id={id}
           />
           <form onSubmit={handleSubmit} className={style.form} id='form'>
-            <div className={style.field}>
+            <div className={style.title}>
               <label htmlFor='post_name'>Título</label>
-              <textarea
+              <div>
+                <textarea
                 type='text'
                 value={input.post_name}
                 name='post_name'
                 onChange={handleChange}
-              />
+                className={style.textarea}
+                />
+                {errors.post_name && (
+                  <p className={style.pdanger}>{errors.post_name}</p>
+                )}
+              </div>
             </div>
-            {errors.post_name && (
-              <p className={style.pdanger}>{errors.post_name}</p>
-            )}
             {/* {isAdmin && (
               <>
                 <div className={style.field}>
@@ -283,179 +286,196 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 )}
               </>
             )}
-            <FormMap edit={"edit"} />
-            <div className={style.field}>
-              <label htmlFor='price'>Precio</label>
-              <input
-                type='number'
-                value={input.price}
-                name='price'
-                onChange={handleChange}
-              />
-            </div>
-            {errors.price && <p className={style.pdanger}>{errors.price}</p>}
-            <div className={style.field}>
-              <label htmlFor='prop_type'>Tipo de propiedad</label>
-              <select
-                className={style.selectFilter}
-                name='prop_type'
-                value={input.prop_type}
-                onChange={handleChange}
-              >
-                <option value='' disabled hidden>
-                  Elija uno
-                </option>
-                {['Casa', 'Apartamento'].map((type, i) => (
-                  <option key={i} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {errors.prop_type && (
-              <p className={style.pdanger}>{errors.prop_type}</p>
-            )}
-            <div className={style.field}>
-              <label htmlFor='m2'>Metros cuadrados</label>
-              <input
-                type='number'
-                value={input.m2}
-                name='m2'
-                min='0'
-                onChange={handleChange}
-              />
-            </div>
-            {errors.m2 && <p className={style.pdanger}>{errors.m2}</p>}
-            <div className={style.field}>
-              <label htmlFor='rooms'>Habitaciones</label>
-              <input
-                type='number'
-                value={input.rooms}
-                name='rooms'
-                min='0'
-                onChange={handleChange}
-              />
-            </div>
-            {errors.rooms && <p className={style.pdanger}>{errors.rooms}</p>}
-            <div className={style.field}>
-              <label htmlFor='bathrooms'>Baños</label>
-              <input
-                type='number'
-                value={input.bathrooms}
-                name='bathrooms'
-                min='0'
-                onChange={handleChange}
-              />
-            </div>
-            {errors.bathrooms && (
-              <p className={style.pdanger}>{errors.bathrooms}</p>
-            )}
-            <div className={style.field}>
-              <label htmlFor='stratum'>Estrato</label>
-              <input
-                type='number'
-                value={input.stratum}
-                name='stratum'
-                min='0'
-                onChange={handleChange}
-              />
-            </div>
-            {errors.stratum && (
-              <p className={style.pdanger}>{errors.stratum}</p>
-            )}
-            <div className={style.field}>
-              <label htmlFor='years'>Años</label>
-              <input
-                type='number'
-                value={input.years}
-                name='years'
-                min='0'
-                onChange={handleChange}
-              />
-            </div>
-            <div className={style.field}>
-              <label htmlFor='description'>Descripción</label>
-              <textarea
-                type='text'
-                value={input.description}
-                name='description'
-                onChange={handleChange}
-              />
-            </div>
-
-            <EditPhotoUploader
+            <div className={style.images}>
+              <EditPhotoUploader
               imagesContainer={input.images}
               onClickDelete={onClickDelete}
               onChangeImage={onChangeImage}
               limit={postDetail.premium ? 20 : 10}
-            />
-            <div className={style.field} onClick={() => setDisplay(!display)}>
-              <p className={style.tit_facilities}>Otras comodidades</p>
+              />
             </div>
-            <div className={display ? style.facilities : style.noFacilities}>
+
+            <div className={style.description}>
+              <div className={style.fieldPrice}>
+                <label htmlFor='price'>Precio</label>
+                <input
+                  type='number'
+                  value={input.price}
+                  name='price'
+                  onChange={handleChange}
+                />
+              </div>
+            {errors.price && <p className={style.pdanger}>{errors.price}</p>}
+
+              <div className={style.field}>
+              <label htmlFor='prop_type'>Tipo de propiedad</label>
+              <select
+              className={style.selectFilter}
+              name='prop_type'
+              value={input.prop_type}
+              onChange={handleChange}
+              >
+              <option value='' disabled hidden>
+              Elija uno
+              </option>
+              {['Casa', 'Apartamento'].map((type, i) => (
+                <option key={i} value={type}>
+                {type}
+                </option>
+              ))}
+              </select>
+              </div>
+              {errors.prop_type && (
+                <p className={style.pdanger}>{errors.prop_type}</p>
+              )}
+              <div className={style.field}>
+              <label htmlFor='m2'>Metros cuadrados</label>
               <input
+              type='number'
+              value={input.m2}
+              name='m2'
+              min='0'
+              onChange={handleChange}
+              />
+              </div>
+              {errors.m2 && <p className={style.pdanger}>{errors.m2}</p>}
+              <div className={style.field}>
+              <label htmlFor='rooms'>Habitaciones</label>
+              <input
+              type='number'
+              value={input.rooms}
+              name='rooms'
+              min='0'
+              onChange={handleChange}
+              />
+              </div>
+              {errors.rooms && <p className={style.pdanger}>{errors.rooms}</p>}
+              <div className={style.field}>
+              <label htmlFor='bathrooms'>Baños</label>
+              <input
+              type='number'
+              value={input.bathrooms}
+              name='bathrooms'
+              min='0'
+              onChange={handleChange}
+              />
+              </div>
+              {errors.bathrooms && (
+                <p className={style.pdanger}>{errors.bathrooms}</p>
+              )}
+              <div className={style.field}>
+              <label htmlFor='stratum'>Estrato</label>
+              <input
+              type='number'
+              value={input.stratum}
+              name='stratum'
+              min='0'
+              onChange={handleChange}
+              />
+              </div>
+              {errors.stratum && (
+                <p className={style.pdanger}>{errors.stratum}</p>
+              )}
+              <div className={style.field}>
+              <label htmlFor='years'>Años</label>
+              <input
+              type='number'
+              value={input.years}
+              name='years'
+              min='0'
+              onChange={handleChange}
+              />
+              </div>
+              <div className={style.fieldDescription}>
+              <label htmlFor='description'>Descripción</label>
+              <textarea
+              type='text'
+              value={input.description}
+              name='description'
+              onChange={handleChange}
+              />
+              </div>
+            </div>
+
+
+            <div className={style.field2} onClick={() => setDisplay(!display)}>
+              <div className={style.field3}>
+                <p className={style.tit_facilities}>Otras comodidades</p>
+              </div>
+                <div className={display ? style.facilities : style.noFacilities}>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='pool'
                 value={!input.pool}
-              />
-              <label htmlFor='pool'> Piscina</label>
-              <br />
-              <input
+                />
+                <label htmlFor='pool'> Piscina</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='backyard'
                 value={!input.backyard}
-              />
-              <label htmlFor='backyard'> Patio</label>
-              <br />
-              <input
+                />
+                <label htmlFor='backyard'> Patio</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='gym'
                 value={!input.gym}
-              />
-              <label htmlFor='gym'> Gimnasio</label>
-              <br />
-              <input
+                />
+                <label htmlFor='gym'> Gimnasio</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='bbq'
                 value={!input.bbq}
-              />
-              <label htmlFor='bbq'> Barbecue</label>
-              <br />
-              <input
+                />
+                <label htmlFor='bbq'> Barbecue</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='parking_lot'
                 value={!input.parking_lot}
-              />
-              <label htmlFor='parking_lot'> Cochera</label>
-              <br />
-              <input
+                />
+                <label htmlFor='parking_lot'> Cochera</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='elevator'
                 value={!input.elevator}
-              />
-              <label htmlFor='elevator'> Ascensor</label>
-              <br />
-              <input
+                />
+                <label htmlFor='elevator'> Ascensor</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='security'
                 value={!input.security}
-              />
-              <label htmlFor='secutiry'> Seguridad</label>
-              <br />
-              <input
+                />
+                <label htmlFor='secutiry'> Seguridad</label>
+                </section>
+                <section>
+                <input
                 type='checkbox'
                 onChange={handleChange}
                 name='garden'
                 value={!input.garden}
-              />
-              <label htmlFor='garden'> Jardín</label>
+                />
+                <label htmlFor='garden'> Jardín</label>
+                </section>
+                </div>
             </div>
             {/* <div className={style.btnReset}>
               <button
@@ -467,6 +487,9 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 {'  Borrar'}
               </button>
             </div> */}
+            <div className={style.divMap}>
+              <FormMap edit={"edit"} />
+            </div>
           </form>
         </>
       )}

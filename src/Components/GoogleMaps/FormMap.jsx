@@ -12,7 +12,7 @@ Geocode.setApiKey(apiKey);
 Geocode.enableDebug();
 
 class LocationSearchModal extends React.Component {
-    
+
     constructor (props) {
         super(props);
         this.state = {
@@ -28,7 +28,7 @@ class LocationSearchModal extends React.Component {
                 lng: this.props.location.longitude || 0,
             },
             markerPosition: {
-                lat: this.props.location.latitude || 0, 
+                lat: this.props.location.latitude || 0,
                 lng: this.props.location.longitude || 0,
             },
             zoom: 15,
@@ -54,7 +54,7 @@ class LocationSearchModal extends React.Component {
                     lng: this.props.location.longitude,
                 },
                 markerPosition: {
-                    lat: this.props.location.latitude, 
+                    lat: this.props.location.latitude,
                     lng: this.props.location.longitude,
                 },
                 allowAddress: this.props.location.allowAddress
@@ -231,10 +231,10 @@ class LocationSearchModal extends React.Component {
     }
 
     render() {
-        const AsyncMap = 
+        const AsyncMap =
             withGoogleMap(
                 props => (
-                    // For Auto complete Search Box 
+                    // For Auto complete Search Box
                     <div className={style.mapForm}>
 
                         <div className={style.autocomplete}>
@@ -268,10 +268,10 @@ class LocationSearchModal extends React.Component {
                             defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
                         >
 
-                            
+
                             {/* InfoWindow on top of marker */}
                             {/*Marker*/}
-                            {this.state.allowAddress === true && 
+                            {this.state.allowAddress === true &&
                                 <>
                                 <Marker
                                     google={this.props.google}
@@ -293,7 +293,7 @@ class LocationSearchModal extends React.Component {
                             }
 
                             {/* Circle */}
-                            {!this.state.allowAddress && 
+                            {!this.state.allowAddress &&
                                 <>
                                     <Circle
                                         google={this.props.google}
@@ -340,13 +340,13 @@ class LocationSearchModal extends React.Component {
                         checked = {!this.state.allowAddress}
                         onClick={() => {
                             this.setState({ allowAddress: !this.state.allowAddress})
-                        }} 
+                        }}
                     />
                 </label>
             </div>
-            
+
                 <div className={style.ctnMap}>
-                    <AsyncMap                   
+                    <AsyncMap
                         mapElement={
                             <div style={{ width: '100%', height: `100%` }} />
                         }
@@ -365,8 +365,8 @@ class LocationSearchModal extends React.Component {
 const mapStateToProps = (state) => ({
     location: state.location
   });
-  
-  
+
+
 function mapDispatchToProps(dispatch) {
     return {
         addLocation: function (location) {

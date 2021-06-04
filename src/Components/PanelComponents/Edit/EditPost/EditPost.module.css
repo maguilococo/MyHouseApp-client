@@ -1,0 +1,223 @@
+.form {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 2% 10%;
+    /* border: 2px solid blue; */
+}
+.ctn input {
+    background: var(--white);
+    margin: 5px 0;
+    padding: 10px;
+    width: max-content;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: var(--dark);
+}
+.ctn textarea {
+    background: var(--white);
+    margin: 5px 0;
+    padding: 15px;
+    width: max-content;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: var(--dark);
+}
+.title {
+  border-bottom: 1px solid var(--blackShadow);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+.title div {
+  width: 80%;
+}
+.textarea {
+  width: 100% !important;
+}
+.images {
+  border-bottom: 1px solid var(--blackShadow);
+  padding: 10px;
+  text-align: center;
+}
+.images * {
+  color: var(--dark) !important;
+  margin: 10px auto;
+}
+.description {
+  border-bottom: 1px solid var(--blackShadow);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fieldPrice {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  border-bottom: 1px solid var(--blackShadow);
+}
+.fieldPrice input {
+  margin-left: 10px;
+  width: 60%;
+}
+.field {
+    padding: 20px 10px 20px 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.field input {
+  width: 50%;
+}
+.field select {
+    background: var(--white);
+    height: 80%;
+    width: 50%;
+    /* font-family: 'Poppins'; */
+    border-radius: 25px;
+    outline:0;
+    /* margin: 5px 0; */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center !important;
+}
+.fieldDescription {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--blackShadow);
+}
+.fieldDescription textarea {
+  width: 80% !important;
+  height: 100%;
+}
+
+.field2 {
+  padding: 20px 10px 20px 10px;
+  width: 100%;
+  border-bottom: 1px solid var(--blackShadow);
+}
+.field3 {
+  padding: 20px 10px 20px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tit_facilities {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: var(--light-blue);
+    color: var(--dark);
+    
+}
+
+.tit_facilities:hover {
+    background-color: var(--dark);
+    color: var(--white);
+}
+.facilities {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.facilities section {
+  width: 33.3%;
+  padding: 5px;
+  text-align: left;
+}
+
+.facilities, .facilities input {
+    color: var(--black);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.noFacilities{
+    display: none;
+}
+.divMap {
+  width: 100%;
+  padding: 10px;
+}
+.divMap * {
+  text-align: center;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.ctn input:disabled {
+    cursor: auto;
+    background-color: rgba(128, 128, 128, 0.239);
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.pdanger {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: var(--dark);
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 58%;
+}
+
+.ctn .form .btnReset {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+}
+.ctn .form .btnReset .btn {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    cursor:  pointer;
+    background: var(--blue);
+    border-radius: 1em;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    font-family: 'Poppins';
+  }
+
+.ctn .form .btnReset .btn:hover {
+    background: var(--dark);
+    box-shadow: var(--blackhadow);
+    transition: all 0.3s ease-in-out;
+}
