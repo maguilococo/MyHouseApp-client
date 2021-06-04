@@ -47,7 +47,7 @@ function PostDetails({ session, id }) {
       history.push(`/panel/user/${session.id}/posts`);
       await getUserData(userId);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
   }

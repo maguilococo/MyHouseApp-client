@@ -10,7 +10,7 @@ const ProgressBar = () => {
 
   const prev = () => {
     setCurrent(current - 1);
-    console.log('prev ', current)
+    // console.log('prev ', current)
     let element = document.getElementById(current-1)
     element.className = '';
   };

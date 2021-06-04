@@ -168,25 +168,24 @@ function Filter({
             Precio (cop):&nbsp;
           </label>
           <div className={style.from_to}>
-            desde&nbsp;
-            <input
-              className={style.inputMinMax}
-              type="text"
-              name="priceMin"
-              placeholder="min"
-              value={queryBlock.priceMin}
-              onChange={changeURL}
-            />
-            &nbsp;hasta&nbsp;
-            <input
-              className={style.inputMinMax}
-              type="text"
-              name="priceMax"
-              placeholder="máx"
-              value={queryBlock.priceMax}
-              onChange={changeURL}
-            />
-          </div>
+            {/* desde&nbsp; */}
+            <select className={`${style.selectFilter} ${style.selectPrice}`} name="priceMin" value={queryBlock.priceMin} onChange={changeURL}>
+            <option value={''}>desde</option>
+            {['100M', '500M', '1000M', '1500M', '2000M', '2500M', '3000M', '3500M', '4000M', '4500M', '5000M'].map((type, i) => (
+            <option key={i} value={type.split('M')[0]*1000000}>
+              {type}
+            </option>))}
+          </select>
+          &nbsp;
+          <select className={`${style.selectFilter} ${style.selectPrice}`} name="priceMax" value={queryBlock.priceMax} onChange={changeURL}>
+            <option value={''}>hasta</option>
+            {['100M', '500M', '1000M', '1500M', '2000M', '2500M', '3000M', '3500M', '4000M', '4500M', '5000M'].map((type, i) => (
+            <option key={i} value={type.split('M')[0]*1000000}>
+              {type}
+            </option>)
+            )}
+          </select>
+          </div> 
         </div>
       <button type='submit' onClick={e => e.preventDefault()} style={{display: 'none'}}></button>
 

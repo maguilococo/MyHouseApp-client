@@ -25,7 +25,7 @@ export async function getPostsService(limit = 10) {
 
 // TODAS LAS PUBLICACIONES PARA EL ADMIN
 export async function getAdminPostDataService(id = '', limit = 10) {
-  console.log('service ',id)
+  // console.log('service ',id)
   let endpoint = `${REACT_APP_API_BASE_ENDPOINT}/posts`;
   endpoint += getQuerysStrings(limit, id);
   return await axios.get(endpoint);
@@ -72,25 +72,6 @@ function getQuerysStrings(limit, id) {
   endpoint += `&${params.toString()}`;
   return endpoint;
   // return `&${params.toString()}`; // window.location.search;
-}
-
-// GET LOCAL DATA FROM COLOMBIA
-export async function getGeoDataService() {
-  const country_id = 'iso_alpha2:CO';
-  let options = []
-  const divisions = await axios.get(`https://api.teleport.org/api/countries/${encodeURI(country_id)}/admin1_divisions/`)
-  divisions.data._links['a1:items'].map (dep =>
-      options.push({value: dep.name, label: dep.name, dep_id: dep.href.slice(-12, -1)})
-
-  )
-  options.map( async (e) =>{
-    e.children = []
-    const cities = await axios.get(`https://api.teleport.org/api/countries/iso_alpha2%3ACO/admin1_divisions/${encodeURI(e.dep_id)}/cities/`)
-    cities.data._links['city:items'].map(city => (
-      e.children.push({ value: city.name, label: city.name })
-    ))
-  })
-  return options;
 }
 
 

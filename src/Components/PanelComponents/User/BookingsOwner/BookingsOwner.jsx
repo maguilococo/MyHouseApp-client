@@ -12,14 +12,14 @@ function BookingsOwner({ panelUser, getUserData, match, deleteBooking }) {
 
   useEffect(() => {
     getUserData(userId);
-    console.log('Booking owner')
+    // console.log('Booking owner')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { render } = panelUser;
   const { posts } = render;
   const list = () => {
-    console.log('Booking owner: ', posts)
-    console.log('render: ', render)
+    // console.log('Booking owner: ', posts)
+    // console.log('render: ', render)
     const data = [];
     posts?.map((p) => p.visitDates?.forEach((e) => {
       data.push({
