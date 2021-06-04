@@ -9,7 +9,7 @@ import { faEraser } from '@fortawesome/free-solid-svg-icons';
 import { getUserDataService, editUserService, addUserService } from '../../../../Services/user.service';
 import Loading from '../../../Auth0/Loading/loading';
 import EditButtonBar from '../../ButtonsBar/EditButtonBar/EditButtonBar';
-import style from '../Edit.module.css';
+import style from './EditUser.module.css';
 import Swal from 'sweetalert2';
 
 function EditUser({ session, id, action }) {
@@ -99,7 +99,7 @@ function EditUser({ session, id, action }) {
             // history.push(`/panel/detail/user/${session.id}`);
           })
           .catch(e=>console.log(e));
-          
+
       //  }
       } else if (action === 'create') {
         if (errors === '') {
@@ -136,6 +136,12 @@ function EditUser({ session, id, action }) {
         <>
           <EditButtonBar rol={session.type ? session.type : 'user'} handleSubmit={handleSubmit} element="user" id={id} />
           <form onSubmit={handleSubmit} className={style.form} id="form">
+            <div className={style.btnReset}>
+              <button className={style.btn} type="button" onClick={(e) => resetForm(e)}>
+                <FontAwesomeIcon icon={faEraser} />
+                {'  Borrar'}
+              </button>
+            </div>
             <div className={style.field}>
               <label htmlFor="name">Nombre</label>
               <input
@@ -204,12 +210,6 @@ function EditUser({ session, id, action }) {
                 name="zip_code"
                 onChange={handleChange}
               />
-            </div>
-            <div className={style.btnReset}>
-              <button className={style.btn} type="button" onClick={(e) => resetForm(e)}>
-                <FontAwesomeIcon icon={faEraser} />
-                {'  Borrar'}
-              </button>
             </div>
           </form>
         </>

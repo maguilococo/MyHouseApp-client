@@ -89,3 +89,7 @@ a {
   height: 50%;
   position: absolute;
 }
+.pac-target-input::placeholder {
+  color: var(--white);
+
+}

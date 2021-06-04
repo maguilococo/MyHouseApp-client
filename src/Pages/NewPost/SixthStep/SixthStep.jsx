@@ -6,7 +6,7 @@ const SixthStep = () => {
   // const { setCurrentComponent } = useCreatePost();
   return (
     <div className='ctn'>
-      <h1>Listo! Revisa los detalles antes de publicar </h1>
+      <h1 className='h1Six'>Listo! Revisa los detalles antes de publicar </h1>
       <div>
         <Checkout />
       </div>

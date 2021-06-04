@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getBookingService } from '../../../../Services/booking.service'
 import styles from './BookingDetails.module.css';
-import Logo from '../../../../images/blue_slim/logoCirculo.png';
+import Logo from '../../../../images/circulo2-8.png';
 
 export default function BookingDetails({ id }) {
   const [loading, setLoading] = useState(true);
   const [booking, setBooking] = useState({});
-  
+
   useEffect(() => {
     getBookingService(id).then(
       res => {

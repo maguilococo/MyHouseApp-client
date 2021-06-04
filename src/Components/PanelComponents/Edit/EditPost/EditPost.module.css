@@ -1,11 +1,9 @@
 .form {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     margin: 2% 10%;
-    /* border: 2px solid blue; */
 }
 .ctn input {
     background: var(--white);
@@ -28,6 +26,7 @@
     cursor: pointer;
     text-align: center;
     color: var(--dark);
+    font-size: 120%;
 }
 .title {
   border-bottom: 1px solid var(--blackShadow);
@@ -42,6 +41,7 @@
 }
 .textarea {
   width: 100% !important;
+
 }
 .images {
   border-bottom: 1px solid var(--blackShadow);
@@ -108,7 +108,7 @@
 }
 .fieldDescription textarea {
   width: 80% !important;
-  height: 100%;
+  height: 120px;
 }
 
 .field2 {
@@ -131,7 +131,7 @@
     border-radius: 25px;
     background-color: var(--light-blue);
     color: var(--dark);
-    
+
 }
 
 .tit_facilities:hover {
@@ -162,11 +162,19 @@
 .divMap {
   width: 100%;
   padding: 10px;
+  color: var(--dark);
 }
-.divMap * {
-  text-align: center;
+.divMap input {
+  text-align: left;
+  color: var(--dark) !important;
 
-
+}
+.divMap input::placeholder {
+  text-align: left;
+  color: var(--dark);
+}
+.ctnMap {
+  /* border: 3px solid red; */
 }
 
 

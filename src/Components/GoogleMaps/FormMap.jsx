@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { addLocation } from '../../Redux/Actions/index';
 import style from '../../Pages/NewPost/Form/Form.module.css'
 import s from './FormMap.module.css';
+import styleEdit from '../PanelComponents/Edit/EditPost/EditPost.module.css';
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAP_API;
 Geocode.setApiKey(apiKey);
@@ -226,7 +227,6 @@ class LocationSearchModal extends React.Component {
             },
         })
     }
-
     render() {
         const AsyncMap =
             withGoogleMap(
@@ -308,7 +308,7 @@ class LocationSearchModal extends React.Component {
               )
 
         return (
-            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }}>
+            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }} className={this.props.edit === 'edit' ? styleEdit.ctnMap : null}>
              <div className={style.col}>
                 <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Ciudad</label>

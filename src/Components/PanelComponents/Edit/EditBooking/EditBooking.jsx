@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { getBookingService, editBookingService, sendBookingEmailService } from '../../../../Services/booking.service'
 import styles from '../../DetailsPanel/BookingDetails/BookingDetails.module.css';
-import Logo from '../../../../images/blue_slim/logoCirculo.png';
+import Logo from '../../../../images/circulo2-8.png';
 import EditButtonBar from '../../ButtonsBar/EditButtonBar/EditButtonBar';
 import Loading from '../../../Auth0/Loading/loading';
 import Swal from 'sweetalert2';
