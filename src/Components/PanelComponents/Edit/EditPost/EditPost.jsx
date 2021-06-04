@@ -144,6 +144,12 @@ function EditPosts({ id, action, session, location, addLocation }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (input.images.length === 0) return Swal.fire({
+      icon: 'warning',
+      title: 'Debes agregar al menos una imagen',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     if (Object.entries(errors).length > 0) {
       return Swal.fire({
         position: 'top-end',
@@ -288,10 +294,10 @@ function EditPosts({ id, action, session, location, addLocation }) {
             )}
             <div className={style.images}>
               <EditPhotoUploader
-              imagesContainer={input.images}
-              onClickDelete={onClickDelete}
-              onChangeImage={onChangeImage}
-              limit={postDetail.premium ? 20 : 10}
+                imagesContainer={input.images}
+                onClickDelete={onClickDelete}
+                onChangeImage={onChangeImage}
+                limit={postDetail.premium ? 20 : 10}
               />
             </div>
 
