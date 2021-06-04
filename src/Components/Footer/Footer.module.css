@@ -11,9 +11,12 @@
     width: 100%;
 }
 
-.ctn{
-
-}
+.link {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
 
 .title{
     display: flex;

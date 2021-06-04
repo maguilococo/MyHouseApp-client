@@ -35,8 +35,8 @@ const CreatePostProvider = ({ children, ...routerProps }) => {
   // ======================================================================
   const [postDetails, setPostDetails] = useState({});
   useEffect(() => {
-    console.log('useEffect sessio.id');
-    console.log('prueba___',infoPlan );
+    // console.log('useEffect sessio.id');
+    // console.log('prueba___',infoPlan );
     setPostDetails({
       // orderId: external_reference,
       premium: infoPlan.title === 'Premium' ? true : false,
@@ -99,7 +99,7 @@ const CreatePostProvider = ({ children, ...routerProps }) => {
   // Actualizar dirección
 
   useEffect(() => {
-    console.log('location en useEffect', location);
+    // console.log('location en useEffect', location);
 
     setPostDetails((postDetails) => ({
       ...postDetails,

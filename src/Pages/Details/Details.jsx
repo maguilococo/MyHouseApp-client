@@ -49,9 +49,9 @@ export default function Details({ routerProps }) {
   useEffect(() => {
     itPostWasBooking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log('session.id', session.id);
-    console.log('property', property);
-    console.log('property owner', property.userId);
+    // console.log('session.id', session.id);
+    // console.log('property', property);
+    // console.log('property owner', property.userId);
   }, [])
 
   async function handleReservar(e) {
@@ -86,7 +86,7 @@ export default function Details({ routerProps }) {
     }
     try {
       const respuesta = await addBookingService(booking);
-      console.log('respuesta status: ', respuesta.status)
+      // console.log('respuesta status: ', respuesta.status)
       if (respuesta.status >= 400) {
         Swal.fire({
           icon: 'error',
