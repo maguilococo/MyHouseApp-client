@@ -7,6 +7,8 @@ import { FaRegCalendar } from 'react-icons/fa';
 import style from './SideMenu.module.css';
 
 function SideMenu({ session }) {
+
+  
   const isAdmin = session.type === 'Admin' || session.type === 'SuperAdmin';
 
   const [state, setState] = useState(false);

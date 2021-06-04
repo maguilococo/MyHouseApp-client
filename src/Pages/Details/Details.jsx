@@ -12,6 +12,7 @@ import styles from './Details.module.css';
 import GoogleMap from '../../Components/GoogleMaps/GoogleMap';
 import Share from '../../Components/Share/Share';
 import Swal from 'sweetalert2';
+import Loading from '../../Components/Auth0/Loading/loading';
 
 export default function Details({ routerProps }) {
   const { id } = routerProps.match.params;
@@ -270,7 +271,7 @@ export default function Details({ routerProps }) {
 
         </main>
       )}
-      {loading && <div>Cargando...</div>}
+      {loading && <Loading />}
     </div>
   );
 }

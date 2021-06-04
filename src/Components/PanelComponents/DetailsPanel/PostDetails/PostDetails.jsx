@@ -19,6 +19,7 @@ import DetailButtonBar from '../../ButtonsBar/DetailButtonBar/DetailButtonBar';
 import styles from './PostDetails.module.css';
 import { sendBookingEmailService } from '../../../../Services/booking.service';
 import { getUserData } from '../../../../Redux/Actions';
+import Loading from '../../../Auth0/Loading/loading';
 
 function PostDetails({ session, id }) {
   const [property, setProperty] = useState('');
@@ -218,7 +219,7 @@ function PostDetails({ session, id }) {
           </section>
         </main>
       )}
-      {loading && <div>Cargando...</div>}
+      {loading && <Loading />}
     </div>
   );
 }

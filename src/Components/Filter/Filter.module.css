@@ -165,8 +165,8 @@
       .rsRange::-moz-range-thumb{
           box-shadow: none;
           border: 0px solid var(--blue);
-          height: 10em;
-          width: 10em;
+          height: 1.6em;
+          width: 0.6em;
           border-radius: 22px;
           background: var(--blue);
           cursor: pointer;
@@ -242,6 +242,8 @@
 
 .btnFilterActive{
     text-shadow: 1px 1px 1px var(--blackShadow);
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .btnReset{
