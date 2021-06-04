@@ -1,34 +1,44 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { getAvailableFilteredPropierties, orderBy } from '../../Redux/Actions';
+import { changeURL, getAvailableFilteredPropierties, orderBy } from '../../Redux/Actions';
 import style from './Order.module.css';
 
 function Orders({ sorting, filter }) {
   const history = useHistory();
   const querystring = window.location.search;
   const params = new URLSearchParams(querystring);
+  const { filters } = useSelector(state => state)
 
   useEffect(() => {
+    console.log('filters redux', filters)
     if (!params.get('orden')) {
       params.delete('orden');
     }
     if (!params.get('atributo')) {
       params.delete('atributo');
     }
-    // params.keys().forEach(p=>console.log('key: ', p))
-//     for(var key of params.keys()) {
-//   console.log(key);
-// }
   });
 
+  // console.log('window.location 22', window.location)
   function handleOrder(e) {
+    
     const [prop, type] = e.target.value.split('_');
-    const params = new URLSearchParams(window.location.search);
-
+   /*  const parameters = window.location.search ? window.location.search.slice(1).split('&') : null;
+    const queryBlock = {};
+    if (parameters) {
+      parameters.forEach((param) => {
+        if (param.split('=')[0] !== 'page') {
+          // eslint-disable-next-line prefer-destructuring
+          queryBlock[`${param.split('=')[0]}`] = param.split('=')[1];
+          params.set(`${param.split('=')[0]}`, param.split('=')[1]);
+        }
+      }); 
+    }*/
     history.push(`/home?${params.toString()}`);
     sorting({ prop, type });
-    filter({});
+    filter(filters);
+    console.log('history ORDER ', history.location)
   }
 
   return (
@@ -58,6 +68,7 @@ function mapDispatchToProps(dispatch) {
   return {
     sorting: (order) => dispatch(orderBy(order)),
     filter: (queryBlock) => dispatch(getAvailableFilteredPropierties(queryBlock)),
+    changeUrl: (url) => dispatch(changeURL(url)),
   };
 }
 
