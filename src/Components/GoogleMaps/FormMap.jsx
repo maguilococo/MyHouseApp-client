@@ -5,8 +5,8 @@ import Autocomplete from 'react-google-autocomplete';
 import { connect } from 'react-redux';
 import { addLocation } from '../../Redux/Actions/index';
 import style from '../../Pages/NewPost/Form/Form.module.css'
-import s from './FormMap.module.css';
-import styleEdit from '../PanelComponents/Edit/EditPost/EditPost.module.css';
+import styleEdit from './FormMap.module.css';
+import s from '../PanelComponents/Edit/EditPost/EditPost.module.css';
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAP_API;
 Geocode.setApiKey(apiKey);
@@ -308,8 +308,8 @@ class LocationSearchModal extends React.Component {
               )
 
         return (
-            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }} className={this.props.edit === 'edit' ? styleEdit.ctnMap : null}>
-             <div className={style.col}>
+            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }} className={this.props.edit === 'edit' ? s.ctnMap : null}>
+             <div className={this.props.edit=== 'edit' ? s.divEdit : style.col}>
                 <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Ciudad</label>
                     <input disabled type='text' value={this.state.city} />
@@ -322,16 +322,16 @@ class LocationSearchModal extends React.Component {
                     <label>Barrio</label>
                     <input disabled type='text' value={this.state.neighborhood} />
                 </div>
-                <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
+                <div className={this.props.edit=== 'edit' ? s.divTextArea : style.field}>
                     <label>Dirección</label>
-                    <textarea disabled  type='text' value={this.state.street_number} />
+                    <textarea disabled  type='text' value={this.state.street_number} className={this.props.edit=== 'edit' ? s.textArea : null} />
                 </div>
                 {/* <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Estrato</label>
                     <input type='number' name="stratum" onChange={this.onChange} value={this.state.stratum} min="0" max="6" />
                 </div>   */}
              </div>
-            <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
+            <div className={this.props.edit=== 'edit' ? `{s.fieldEdit} ${s.check}` : style.field}>
                 <label htmlFor="allowAddress">Prefiero ocultar mi ubicación
                     <input type="checkbox" className={style.allowAddress} name="allowAddress"
                         checked = {!this.state.allowAddress}
@@ -351,8 +351,9 @@ class LocationSearchModal extends React.Component {
                             <div style={{ height: this.state.height, margin: '5% 0' }} />
                         }
                     />
+
+                    <button className={style.confirm} onClick={this.confirmAddress}>Confirmar ubicación</button>
                 </div>
-                <button className={style.confirm} onClick={this.confirmAddress}>Confirmar ubicación</button>
             </div>
         )
     }

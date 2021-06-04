@@ -161,7 +161,7 @@
 }
 .divMap {
   width: 100%;
-  padding: 10px;
+  padding: 0 10px;
   color: var(--dark);
 }
 .divMap input {
@@ -174,9 +174,42 @@
   color: var(--dark);
 }
 .ctnMap {
-  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
 }
 
+.divEdit {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.divEdit .fieldEdit {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.divEdit input {
+  margin-left: 10px;
+  width: 70%;
+}
+.divTextArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divTextArea .textArea {
+  width: 70% !important;
+  margin-left: 20px;
+
+}
+.check {
+  padding: 10px;
+  /* border: 2px solid green; */
+}
 
 
 
