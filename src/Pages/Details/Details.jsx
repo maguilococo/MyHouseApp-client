@@ -19,16 +19,22 @@ export default function Details({ routerProps }) {
   const [loading, setLoading] = useState(true);
   const [wasBooking, setWasBooking] = useState(false);
   const { session } = useSelector((state) => state);
-
+  const [propertyOwner, setPropertyOwner] = useState({});
+  
   useEffect(() => {
     async function fetchApi(id) {
       const propertyFetch = await getPostService(id);
+      // console.log('propertyFetch.data: ', propertyFetch.data.userId)
       setProperty(propertyFetch.data);
+      setPropertyOwner(propertyFetch.data.userId);
       setLoading(false);
     }
     fetchApi(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
+
 
   async function itPostWasBooking() {
     let userInteresed = await getUserDataService(session.id);
@@ -42,26 +48,34 @@ export default function Details({ routerProps }) {
   useEffect(() => {
     itPostWasBooking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log('session.id', session.id);
+    console.log('property', property);
+    console.log('property owner', property.userId);
   }, [])
 
   async function handleReservar(e) {
+    Swal.showLoading();
     if (wasBooking) {
+      Swal.close();
       Swal.fire({
         icon: 'warning',
         title: 'Ya lo has reservado!',
         showConfirmButton: true,
       })
+
       document.getElementById("label-message").style.color = "red";
       document.getElementById("label-message").style.fontWeight = "bold";
       return;
     }
 
     if (!session.id) {
+      Swal.close();
       Swal.fire({
         icon: 'warning',
         title: 'Debe iniciar sesión para hacer una reserva!',
         showConfirmButton: true,
       })
+
       return;// redirigir a login?
     }
     const booking = {
@@ -71,7 +85,17 @@ export default function Details({ routerProps }) {
     }
     try {
       const respuesta = await addBookingService(booking);
+      console.log('respuesta status: ', respuesta.status)
+      if (respuesta.status >= 400) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Algo no fue bien!',
+          footer: 'Puede intentarlo más tarde'
+        })
+      }
       await sendBookingEmailService(respuesta.data.booking.id)
+      Swal.close();
       Swal.fire({
         icon: 'success',
         title: 'Su reserva ha sido creada exitosamente!',
@@ -100,7 +124,7 @@ export default function Details({ routerProps }) {
           </section>
           <article className={styles.hero_carousel}>
             <div className={styles.photo_gallery}>
-            <SliderCarousel elementsContainer={property.images} />
+              <SliderCarousel elementsContainer={property.images} />
             </div>
           </article>
           <div className={styles.ctnDetails}>
@@ -119,37 +143,37 @@ export default function Details({ routerProps }) {
                   <section>
                     {property.rooms}
                     <span className={styles.dicon}>
-                    <FontAwesomeIcon icon={faBed} />
+                      <FontAwesomeIcon icon={faBed} />
                     </span>
                   </section>
                   <label>Habitaciones</label>
                 </div>
                 <div>
-                <section>
-                  {property.bathrooms}
-                  <span className={styles.dicon}>
-                  <FontAwesomeIcon icon={faBath} />
-                  </span>
-                </section>
-                <label>Baños</label>
+                  <section>
+                    {property.bathrooms}
+                    <span className={styles.dicon}>
+                      <FontAwesomeIcon icon={faBath} />
+                    </span>
+                  </section>
+                  <label>Baños</label>
+                </div>
+                <div>
+                  <section>
+                    {property.stratum}
+                  </section>
+                  <label>Estrato</label>
+                </div>
               </div>
-              <div>
-                <section>
-                  {property.stratum}
-                </section>
-                <label>Estrato</label>
-              </div>
-            </div>
-          </article>
+            </article>
 
-          <article className={styles.address_detail}>
-            <div>
-            <h2>{`${property.department}, ${property.city}`}</h2>
-            <p>{property.neighborhood}</p>
-            <p className={styles.price}>{`$${new Intl.NumberFormat('de-DE').format(property.price)}`}</p>
-            <p>{property.description}</p>
-            </div>
-          </article>
+            <article className={styles.address_detail}>
+              <div>
+                <h2>{`${property.department}, ${property.city}`}</h2>
+                <p>{property.neighborhood}</p>
+                <p className={styles.price}>{`$${new Intl.NumberFormat('de-DE').format(property.price)}`}</p>
+                <p>{property.description}</p>
+              </div>
+            </article>
           </div>
           {property.status === 'Available' ? (
           <div className={styles.divReservation}>
@@ -159,10 +183,12 @@ export default function Details({ routerProps }) {
             <article className={styles.tour_schedule}>
               <div className={styles.details2}>
                 <h3>Agenda tu cita</h3>
-                <label>{new Date().toLocaleDateString("es-ES")}</label>
                 {wasBooking && <label id='label-message' style={{ color: 'green' }}>Ya lo has reservado!</label>}
-                <button type="submit" onClick={handleReservar}>Select</button>
-              </div> 
+                {session.id !== propertyOwner ?
+                  <button id='btn-reservar' type="submit" onClick={handleReservar}>Select</button> :
+                  <button disabled='true' style={{ backgroundColor: 'gray', cursor: 'default' }} type="submit" >Select</button>
+                }
+              </div>
             </article>
           </div>
            ) : null }

@@ -5,13 +5,14 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-  align-content: center;
-  justify-content: center;
+  /* align-content: center;
+  justify-content: center; */
 }
 
 html {
   height:100vh;
   overflow-y: scroll;
+  width: 100%
 }
 
 body {
@@ -20,12 +21,21 @@ body {
   color: var(--black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  /* width: 100%; */
 }
 
 .app {
-  height: 100vh;
+  margin: 0px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.soyYo{
+  width: 100%;
+}
 :root {
   --blackShadow: #00000049;
   --gray: ;

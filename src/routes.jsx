@@ -19,7 +19,6 @@ import ProgressBar from './Pages/NewPost/ProgressBar';
 import ProtectedRoute from './Components/Auth0/ProtectedRoute/ProtectedRoute';
 import Successful from './Pages/Successful/Successful'
 import Landing from './Pages/Landing/Landing';
-import Footer from './Components/Footer/Footer';
 
 export default function MyHouseRoutes() {
   // React state to know if display mobile menu
@@ -30,7 +29,7 @@ export default function MyHouseRoutes() {
   // Menu will be display in all routes
   return (
     <Router>
-      <div>
+      <div className='soyYo'>
         <SideMenu mobile={mobile} isMobile={isMobile} />
         <NavBar isMobile={isMobile}/>
         <Switch>
@@ -69,7 +68,7 @@ export default function MyHouseRoutes() {
             component={NotFound}
             />
         </Switch>
-         <Footer/> 
+
       </div>
     </Router>
   );

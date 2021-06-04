@@ -13,6 +13,7 @@ import {
 } from '../../Services/properties.service';
 import style from './Successful.module.css';
 import Swal from 'sweetalert2';
+import Loading from '../../Components/Auth0/Loading/loading';
 
 const Successful = () => {
   const { REACT_APP_API_BASE_ENDPOINT } = process.env;
@@ -55,7 +56,9 @@ const Successful = () => {
      })
      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
-  const post = {
+   let post = {}
+  if (postDetails){
+    post = {
     name: user.name,
     email: user.email,
     title: postDetails.post_name,
@@ -63,8 +66,8 @@ const Successful = () => {
     price: plans[0]?.price,
     plan: postDetails.premium ? 'Premium' : 'Basic',
     date: expirationDate,
-  };
-
+    };
+  }
   useEffect(() => {
     (async function(){
       if(session.id && localStorage.getItem('local') !== payment_id){
@@ -82,6 +85,7 @@ const Successful = () => {
           // const r = await axios.post(`http://localhost:3001/mercadopago/order`, obj)
           setOrder(r.data.length ? r.data.filter((e) => e.id === external_reference) : r.data.id);
           localStorage.setItem('local', payment_id )
+          localStorage.removeItem('post');
       }
       if(localStorage.getItem('local')){
         setOrder(merchant_order_id)
@@ -114,7 +118,7 @@ const Successful = () => {
 
   return (
     <div className={style.ctn}>
-      {!order ? <h1>Cargando...</h1>
+      {!order ? <Loading />
         :<div className={style.success}>
         <img src={image} alt='img' className={style.img}/>
         <div className={style.divCheck}><h1 className={style.check}><FontAwesomeIcon icon={faCheck} /></h1></div>

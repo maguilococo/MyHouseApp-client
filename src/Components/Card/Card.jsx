@@ -74,7 +74,7 @@ export default function Card({
                 </p>
               </div>
               <div>
-              <p>
+              <p className={style.views}>
                 <span className={style.eye}>
                   <FontAwesomeIcon icon={faEye}/>  
                 </span>

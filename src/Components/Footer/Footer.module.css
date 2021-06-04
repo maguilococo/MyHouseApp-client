@@ -1,8 +1,9 @@
 .main {
+    align-self: flex-end;
     display: flex;
     flex-direction: column;
     background-color: var(--dark);
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 25px;
     position: relative;
@@ -11,7 +12,7 @@
 }
 
 .ctn{
-   
+
 }
 
 .title{
@@ -19,6 +20,7 @@
     color: var(--white);
     font-size: 17px;
     margin-bottom: 10px;
+    justify-content: center;
 }
 
 .disclaimer{

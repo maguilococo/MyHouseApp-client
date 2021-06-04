@@ -11,7 +11,7 @@ const formInputsConfig = [
     type: ['Casa', 'Apartamento'],
     name: 'prop_type',
   },
-  { tag: 'text', label: 'Precio', type: 'number', min: 0, name: 'price' },
+  { tag: 'text', label: 'Precio (COP)', type: 'number', min: 1, name: 'price' },
   {
     tag: 'text',
     label: 'Metros cuadrados',
@@ -21,6 +21,7 @@ const formInputsConfig = [
   },
   { tag: 'text', label: 'Baños', type: 'number', min: 0, name: 'bathrooms' },
   { tag: 'text', label: 'Habitaciones', type: 'number', min: 0, name: 'rooms' },
+  { tag: 'text', label: 'Estrato', type: 'number', min: 1, max: 6, name: 'stratum' },
   { tag: 'text', label: 'Antigüedad', type: 'number', min: 0, name: 'years' },
 ];
 

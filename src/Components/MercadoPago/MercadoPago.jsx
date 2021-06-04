@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PlansCard from './PlansCard/PlansCard';
 import style from './MercadoPago.module.css';
+import Loading from '../Auth0/Loading/loading';
 
 function MercadoPago() {
   const { REACT_APP_API_BASE_ENDPOINT } = process.env;
@@ -29,7 +30,7 @@ function MercadoPago() {
 
   return (
     <div className={style.ctn}>
-      {!plans.length ? <h1>Cargando...</h1> : list}
+      {!plans.length ? <Loading /> : list}
     </div>
   );
 }
