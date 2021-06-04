@@ -1,0 +1,98 @@
+.ctn{
+    margin: auto auto;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 10%;
+}
+
+.field {
+  padding: 1.2% 0;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field select {
+    background: var(--white);
+    height: 2.9em;
+    width: 13em;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    outline:0;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+}
+.ctn input {
+    background: var(--white);
+    margin: 5px 0;
+    padding: 10px;
+    width: 70%;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: var(--dark);
+}
+
+.ctn input:disabled {
+    cursor: auto;
+    background-color: rgba(128, 128, 128, 0.239);
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.pdanger {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: var(--dark);
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 58%;
+}
+
+.ctn .form .btnReset {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid var(--blackShadow);
+}
+.ctn .form .btnReset .btn {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    cursor:  pointer;
+    background: var(--blue);
+    border-radius: 1em;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    font-family: 'Poppins';
+  }
+
+.ctn .form .btnReset .btn:hover {
+    background: var(--dark);
+    box-shadow: var(--blackhadow);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+.noFacilities{
+    display: none;
+}
