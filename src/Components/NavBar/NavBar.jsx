@@ -7,6 +7,7 @@ import AuthNav from '../Auth0/Auth-nav/Auth-nav';
 import style from './NavBar.module.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { getGoogleUserData, userSession } from '../../Redux/Actions/index';
+import { updateExpirationDate } from '../../Services/properties.service'
 
 function NavBar({ userInfo, getGoogleUser, userSession, isMobile }) {
   const { user, isAuthenticated } = useAuth0();
@@ -25,6 +26,7 @@ function NavBar({ userInfo, getGoogleUser, userSession, isMobile }) {
           userSession(userId) 
         }
       }
+    updateExpirationDate();  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   

@@ -88,6 +88,7 @@ export default function Details({ routerProps }) {
 
   return (
     <div>
+      { (property.status && property.status !== 'Available') ? <div className={styles.pause}> La publicación se encuentra pausada </div> : null }
       {!loading && (
         <main className={styles.container}>
           <section className={styles.title}>
@@ -150,6 +151,7 @@ export default function Details({ routerProps }) {
             </div>
           </article>
           </div>
+          {property.status === 'Available' ? (
           <div className={styles.divReservation}>
             <div className={styles.divTitle}>
               ¡Estoy Interesado!
@@ -160,9 +162,10 @@ export default function Details({ routerProps }) {
                 <label>{new Date().toLocaleDateString("es-ES")}</label>
                 {wasBooking && <label id='label-message' style={{ color: 'green' }}>Ya lo has reservado!</label>}
                 <button type="submit" onClick={handleReservar}>Select</button>
-              </div>
+              </div> 
             </article>
           </div>
+           ) : null }
 
 
           <section className={styles.map_facilities}>

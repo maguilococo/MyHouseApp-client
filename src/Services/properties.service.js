@@ -104,3 +104,9 @@ export function valueTypes (input) {
    })
   return values;
 }
+
+//UPDATE EXPIRATION DATE
+export async function updateExpirationDate() {
+  let endpoint = `${REACT_APP_API_BASE_ENDPOINT}/updater`;
+  return await axios.get(endpoint);
+}
