@@ -5,7 +5,7 @@ import EditBooking from './EditBooking/EditBooking';
 
 function EditForm({ match }) {
   const { path, id } = match.params;
-  console.log('ID', id)
+  // console.log('ID', id)
   function display() {
     if (path === 'user') return <EditUser path={path} action="edit" id={id} />;
     if (path === 'post') return <EditPosts path={path} action="edit" id={id} />;

@@ -77,13 +77,13 @@ class LocationSearchModal extends React.Component {
                     () => {
                         Geocode.fromLatLng(position.coords.latitude, position.coords.longitude).then(
                             response => {
-                                console.log(response)
+                                // console.log(response)
                                 const street_number = response.results[0].formatted_address,
                                     addressArray = response.results[0].address_components,
                                     city = this.getCity(addressArray),
                                     department = this.getDepartment(addressArray),
                                     neighborhood = this.getNeighborhood(addressArray);
-                                console.log(city, department);
+                                // console.log(city, department);
                                 this.setState({
                                     street_number: (street_number) ? street_number : '',
                                     city: (city) ? city : '',

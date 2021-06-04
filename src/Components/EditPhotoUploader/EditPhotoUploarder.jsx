@@ -46,7 +46,7 @@ const EditPhotoUploader = ({
     const newImages = [...photos, ...newFile];
     onChangeImage(newImages);
     target.value = '';
-    console.log('renny');
+    // console.log('renny');
   };
 
   return (

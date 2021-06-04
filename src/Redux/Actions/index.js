@@ -107,7 +107,7 @@ export function orderBy(payload) {
 
 // ALL ADMIN POSTS DATA
 export const getAdminData = (id) => async function (dispatch) {
-  console.log(id, 'del index ')
+  // console.log(id, 'del index ')
   return getAdminPostDataService(id)
     .then((res) => {
       dispatch(

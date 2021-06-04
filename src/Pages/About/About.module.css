@@ -1,22 +1,98 @@
-.ctn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10%;
+.aboutUsContainer{
+    width: 100vw;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cardscontainer {
+    margin: auto;
+    width: 70%;
+}
+
+.flipcard {
+    display: inline-block;
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    bottom: 0;
+    perspective: 1000px; 
+    margin: 20px;
+  }
+  
+  .flipcardinner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flipcard:hover .flipcardinner {
+    transform: rotateY(180deg);
+  }
+  
+  .flipcardfront, .flipcardback {
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+
+  .flipcardfront {
     color: var(--dark);
-}
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.212);
+  }
+  
 
-.title {
-    font-size: 2rem;
-}
+  .flipcardback {
+    background-color: var(--blue);
+    color: white;
+    transform: rotateY(180deg);
+  }
 
-.version {
-    font-size: 1.2rem;
+  .imageProfileAboutUs{
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 100px;
+      margin-top: 20px;
+  }
+
+  .aboutUsName{
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  .aboutUsName1{
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+
+  .aboutUsIcons{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .titleAboutUs{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
     color: var(--blue);
-    margin-bottom: 1em;
-}
+  }
 
-.descrption {
-    font-size: 1.5rem;
-}
+  .descriptionAboutUs{
+    font-size: 17px;
+    width: 100%;
+    padding-inline: 9vw;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
