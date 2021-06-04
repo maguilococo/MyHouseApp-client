@@ -89,7 +89,7 @@ function EditUser({ session, id, action }) {
           })
         } else { */
           return editUserService(id, input).then(  () => {
-            console.log('EDIT USER ',input)
+            // console.log('EDIT USER ',input)
             Swal.fire({
               icon: 'success',
               title: `Usuario editado correctamente `,

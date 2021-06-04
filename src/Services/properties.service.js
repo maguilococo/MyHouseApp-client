@@ -25,7 +25,7 @@ export async function getPostsService(limit = 10) {
 
 // TODAS LAS PUBLICACIONES PARA EL ADMIN
 export async function getAdminPostDataService(id = '', limit = 10) {
-  console.log('service ',id)
+  // console.log('service ',id)
   let endpoint = `${REACT_APP_API_BASE_ENDPOINT}/posts`;
   endpoint += getQuerysStrings(limit, id);
   return await axios.get(endpoint);

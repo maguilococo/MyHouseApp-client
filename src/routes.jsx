@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
   Redirect,
+  withRouter,
 } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import NavBar from './Components/NavBar/NavBar';
@@ -50,7 +51,7 @@ export default function MyHouseRoutes() {
           />
           <Route
             exact path="/about"
-            component={About}
+            component={withRouter(About)}
           />
           <Route
             exact path="/signin"

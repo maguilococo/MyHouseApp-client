@@ -7,7 +7,7 @@ import FilterPosts from '../PanelComponents/ButtonsBar/Filter/FilterPosts/Filter
 function MobileFilter () {
 
   function openFilters() {
-    console.log('openFilter MobileFilter')
+    // console.log('openFilter MobileFilter')
     document.getElementById('filtersSide').className = 'openFilter';
   }
 
