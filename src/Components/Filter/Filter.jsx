@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import {  FaEraser } from 'react-icons/fa';
+import { VscTriangleDown } from 'react-icons/vsc';
 import { useHistory } from 'react-router-dom';
 import style from './Filter.module.css';
 import { getAvailableFilteredPropierties } from '../../Redux/Actions';
@@ -285,7 +286,7 @@ function Filter({
         {/* Facilities */}
         <div className={style.field} onClick={() => setDisplay(!display)}>
           <p className={style.tit_facilities}>
-            Otras comodidades
+            Otras comodidades <VscTriangleDown />
           </p>
         </div>
         <div className={display ? style.facilities : style.noFacilities}>
