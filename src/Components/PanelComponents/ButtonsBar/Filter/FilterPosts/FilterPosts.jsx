@@ -105,7 +105,13 @@ function FilterPosts({ panel }) {
                     <FaTimes/>
               </button>
             </div>
-
+            <div className={`${style.btnReset} buttons`}>
+              {/* <button className={style.btn} type="button" onClick={(e)=>clear(e)}>
+                <FaEraser />
+                {'  Borrar'}
+              </button> */}
+              <button type="submit" className={`${style.btn} apply`} onClick={sendForm}> Aplicar filtros </button>
+            </div>
             {/* Status */}
             {panel && <div className={style.field}>
               <select className={style.selectFilter} name="status" value={queryBlock.status} onChange={handlerQueryBlock}>
@@ -159,57 +165,84 @@ function FilterPosts({ panel }) {
               </div>
 
               {/* Price min y max */}
-              <div className={style.field}>
-                <label>
-                  Precio (cop):&nbsp;
-                </label>
-                <div className={style.from_to}>
-                  desde&nbsp;
-                  <input
-                    className={style.inputMinMax}
-                    type="text"
-                    name="priceMin"
-                    placeholder="min"
-                    value={queryBlock.priceMin}
-                    onChange={handlerQueryBlock}
-                  />
-                  &nbsp;hasta&nbsp;
-                  <input
-                    className={style.inputMinMax}
-                    type="text"
-                    name="priceMax"
-                    placeholder="máx"
-                    value={queryBlock.priceMax}
-                    onChange={handlerQueryBlock}
-                  />
-                </div>
-              </div>
+             <div className={style.field}>
+              <label>
+                Precio (cop):&nbsp;
+              </label>
+              <div className={style.from_to}>
+                {/* desde&nbsp; */}
+                <select className={`${style.selectFilter} ${style.selectPrice}`} name="priceMin" value={queryBlock.priceMin} onChange={handlerQueryBlock}>
+                <option value={''}>desde</option>
+                {['100M', '500M', '1000M', '1500M', '2000M', '2500M', '3000M', '3500M', '4000M', '4500M', '5000M'].map((type, i) => (
+                <option key={i} value={type.split('M')[0]*1000000}>
+                  {type}
+                </option>))}
+              </select>
+              &nbsp;
+              <select className={`${style.selectFilter} ${style.selectPrice}`} name="priceMax" value={queryBlock.priceMax} onChange={handlerQueryBlock}>
+                <option value={''}>hasta</option>
+                {['100M', '500M', '1000M', '1500M', '2000M', '2500M', '3000M', '3500M', '4000M', '4500M', '5000M'].map((type, i) => (
+                <option key={i} value={type.split('M')[0]*1000000}>
+                  {type}
+                </option>)
+                )}
+              </select>
+              </div> 
+            </div>
 
               {/* Rooms  */}
               <div className={style.field}>
-                <label>
-                  Habitaciones:&nbsp;
-                </label>
-                <div className={style.buttons}>
-                  {['+1','+2','+3','+4','+5','+6'].map(
-                    (el, index) => 
-                    <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="rooms" onClick={(e) =>{e.preventDefault(); handlerQueryBlock(e);}} value={el}>{el}</button>
-                  )}
-                </div>
-              </div>
+          <label>
+            Habitaciones:&nbsp;
+          </label>
+          <div className={style.buttons}>
+            {['+1','+2','+3','+4','+5','+6'].map(
+              (el, index) => 
+             /*  <button className={ el[1] === queryBlock.rooms ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="rooms"
+              onClick={(e) =>{e.preventDefault(); changeURL(e);}} value={el[1]}
+              onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+              >
+                {el}
+              </button> */
+              el.split('+')[1] === queryBlock.rooms
+                ? (
+                  <button  className={`${style.btnFilter} ${style.btnFilterActive}`} key={index} name="rooms"
+                    onClick={(e) => { e.preventDefault(); handlerQueryBlock(e); }} value={el[1]}
+                    // onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                  >
+                    {el}
+                  </button>
+                )
+                : (
+                  <button className={style.btnFilter} key={index} name="rooms"
+                    onClick={(e) => { e.preventDefault(); handlerQueryBlock(e); }} value={el[1]}
+                    // onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                  >
+                    {el}
+                  </button>
+                )
+            )
+            }
+          </div>
+        </div>
 
-              {/* Bathrooms */}
-              <div className={style.field}>
-                <label>
-                  Baños:&nbsp;
-                </label>
-                <div className={style.buttons}>
-                  {['+1','+2','+3','+4','+5','+6'].map(
-                    (el, index) => 
-                      <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="bathrooms" onClick={(e) =>{e.preventDefault(); handlerQueryBlock(e);}} value={el}>{el}</button>
-                  )}
-                </div>
-              </div>
+        {/* Bathrooms */}
+        <div className={style.field}>
+          <label>
+            Baños:&nbsp;
+          </label>
+          <div className={style.buttons}>
+            {['+1','+2','+3','+4','+5','+6'].map(
+              (el, index) => 
+                <button className={ el[1] === queryBlock.bathrooms ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="bathrooms"
+                onClick={(e) =>{e.preventDefault(); handlerQueryBlock(e);}} value={el[1]}
+                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                >
+                  {el}
+                </button>
+            )}
+          </div>
+        </div>
 
               {/* Area min y max */}
               <div className={style.rangeField}>
@@ -232,11 +265,16 @@ function FilterPosts({ panel }) {
                   Estrato:&nbsp;
                 </label>
                 <div className={style.buttons}>
-                  {[1,2,3,4,5,6].map(
-                    (el, index) => 
-                      <button class={ el === queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="stratum" onClick={(e) =>{e.preventDefault(); handlerQueryBlock(e);}} value={el}>{el}</button>
-                  )}
-                </div>
+                {[1,2,3,4,5,6].map(
+                  (el, index) => 
+                    <button className={ el == queryBlock.stratum ? `${style.btnFilter} ${style.btnFilterActive}` : style.btnFilter} key={index} name="stratum"
+                    onClick={(e) =>{e.preventDefault(); handlerQueryBlock(e);}} value={el}
+                    onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                    >
+                      {el}
+                    </button>
+                )}
+          </div>
               </div>
 
               {/* Type of property */}
@@ -270,37 +308,30 @@ function FilterPosts({ panel }) {
                 </p>
               </div>
               <div className={display ? style.facilities : style.noFacilities}>
-                <input type="checkbox" onChange={handlerQueryBlock} name="pool" value={!queryBlock.pool} />
+                <input type="checkbox" checked={queryBlock.pool} onChange={handlerQueryBlock} name="pool" value={!queryBlock.pool} />
                 <label htmlFor="pool"> Piscina</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="backyard" value={!queryBlock.backyard} />
+                <input type="checkbox" checked={queryBlock.backyard} onChange={handlerQueryBlock} name="backyard" value={!queryBlock.backyard} />
                 <label htmlFor="backyard"> Patio</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="gym" value={!queryBlock.gym} />
+                <input type="checkbox" checked={queryBlock.gym} onChange={handlerQueryBlock} name="gym" value={!queryBlock.gym} />
                 <label htmlFor="gym"> Gimnasio</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="bbq" value={!queryBlock.bbq} />
+                <input type="checkbox" checked={queryBlock.bbq} onChange={handlerQueryBlock} name="bbq" value={!queryBlock.bbq} />
                 <label htmlFor="bbq"> Barbecue</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="parking_lot" value={!queryBlock.parking_lot} />
+                <input type="checkbox" checked={queryBlock.parking_lot} onChange={handlerQueryBlock} name="parking_lot" value={!queryBlock.parking_lot} />
                 <label htmlFor="parking_lot"> Cochera</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="elevator" value={!queryBlock.elevator} />
+                <input type="checkbox" checked={queryBlock.elevator} onChange={handlerQueryBlock} name="elevator" value={!queryBlock.elevator} />
                 <label htmlFor="elevator"> Ascensor</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="security" value={!queryBlock.security} />
+                <input type="checkbox" checked={queryBlock.security} onChange={handlerQueryBlock} name="security" value={!queryBlock.security} />
                 <label htmlFor="secutiry"> Seguridad</label>
                 <br />
-                <input type="checkbox" onChange={handlerQueryBlock} name="garden" value={!queryBlock.garden} />
+                <input type="checkbox" checked={queryBlock.garden} onChange={handlerQueryBlock} name="garden" value={!queryBlock.garden} />
                 <label htmlFor="garden"> Jardín</label>
               </div>
-            <div className={`${style.btnReset} buttons`}>
-              {/* <button className={style.btn} type="button" onClick={(e)=>clear(e)}>
-                <FaEraser />
-                {'  Borrar'}
-              </button> */}
-              <button type="submit" className={style.btn} onClick={sendForm}> Aplicar filtros </button>
-            </div>
           </form>
         </div>
       </div>

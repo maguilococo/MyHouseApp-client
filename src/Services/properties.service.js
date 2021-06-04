@@ -74,25 +74,6 @@ function getQuerysStrings(limit, id) {
   // return `&${params.toString()}`; // window.location.search;
 }
 
-// GET LOCAL DATA FROM COLOMBIA
-export async function getGeoDataService() {
-  const country_id = 'iso_alpha2:CO';
-  let options = []
-  const divisions = await axios.get(`https://api.teleport.org/api/countries/${encodeURI(country_id)}/admin1_divisions/`)
-  divisions.data._links['a1:items'].map (dep =>
-      options.push({value: dep.name, label: dep.name, dep_id: dep.href.slice(-12, -1)})
-
-  )
-  options.map( async (e) =>{
-    e.children = []
-    const cities = await axios.get(`https://api.teleport.org/api/countries/iso_alpha2%3ACO/admin1_divisions/${encodeURI(e.dep_id)}/cities/`)
-    cities.data._links['city:items'].map(city => (
-      e.children.push({ value: city.name, label: city.name })
-    ))
-  })
-  return options;
-}
-
 
 // DATA TYPE PARSER FORM
 export function valueTypes (input) {
