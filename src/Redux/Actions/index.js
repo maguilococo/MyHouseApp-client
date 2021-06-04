@@ -35,6 +35,7 @@ import {
   CHANGE_URL,
   USER_SESSION,
   ADD_LOCATION,
+  FILTERS,
 } from './types';
 
 // Actions
@@ -377,6 +378,19 @@ export function changeURL(url) {
     );
   };
 }
+
+// FILTERS
+export function filters(filter) {
+  return function (dispatch) {
+    return dispatch(
+      {
+        type: FILTERS,
+        payload: filter,
+      },
+    );
+  };
+}
+
 
 // ADD_LOCATION
 export function addLocation(location) {

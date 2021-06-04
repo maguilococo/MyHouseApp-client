@@ -19,6 +19,7 @@ import {
   CHANGE_URL,
   USER_SESSION,
   ADD_LOCATION,
+  FILTERS,
 } from '../Actions/types';
 
 const initialState = {
@@ -36,6 +37,7 @@ const initialState = {
   detail: {},
   session: {},
   location: {},
+  filters: {},
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -165,6 +167,11 @@ export default function rootReducer(state = initialState, action) {
     return {
       ...state,
       location: action.payload
+    }
+  case FILTERS:
+    return {
+      ...state,
+      filters: action.payload
     }
   default:
     return state;

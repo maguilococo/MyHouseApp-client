@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import {  FaEraser } from 'react-icons/fa';
 import { VscTriangleDown } from 'react-icons/vsc';
 import { useHistory } from 'react-router-dom';
 import style from './Filter.module.css';
-import { getAvailableFilteredPropierties } from '../../Redux/Actions';
+import { getAvailableFilteredPropierties, filters } from '../../Redux/Actions';
 
 function Filter({
   searched, filter, orderProp, orderType,
@@ -13,8 +13,10 @@ function Filter({
   const querystring = window.location.search;
   const params = new URLSearchParams(querystring);
   const [URL, setURL] = useState('');
+  const dispatch = useDispatch();
+
   const initialState = {
-    // post_name: searched,
+    post_name: '',
     prop_type: '',
     city: '',
     stratum: '',
@@ -43,6 +45,7 @@ function Filter({
     params.set(event.target.name, event.target.value);
     updatePath(params);
     setURL(window.location.href);
+    dispatch(filters(queryBlock))
   }
 
   useEffect(() => {
@@ -101,6 +104,8 @@ function Filter({
     setQueryBlock(initialState);
     filter({});
     document.getElementById('form').reset();
+    filters({})
+    console.log('BORRAR ', history.location)
   }
   
   const [display, setDisplay] = useState(false);
