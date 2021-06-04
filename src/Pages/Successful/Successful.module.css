@@ -29,6 +29,7 @@
 }
 .divCheck {
   display: flex;
+  justify-content: center;
 }
 .check {
   width: 50px;

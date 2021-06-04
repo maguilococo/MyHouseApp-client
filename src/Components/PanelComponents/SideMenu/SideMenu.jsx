@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,11 @@ function SideMenu({ session }) {
   const isAdmin = session.type === 'Admin' || session.type === 'SuperAdmin';
 
   const [state, setState] = useState(false);
+  const [name, setName] = useState(session.name);
+
+  useEffect(() => {
+    setName(session.name)
+  }, [session]);
   window.onscroll = () => {
     const scroll = (() => (document.getElementById('navPanel') ? document.getElementById('navPanel').getBoundingClientRect().top : document.getElementById('navPanel')))();
     const scrollWindow = window.scrollY;
@@ -25,7 +30,7 @@ function SideMenu({ session }) {
               <h2 title='Mi perfil'>
                 <NavLink to={`/panel/detail/user/${session.id}`} className={style.link} activeClassName={style.active}>
                     <FontAwesomeIcon icon={faUserShield} className={style.icon} />
-                    {` ${session.name}`}
+                    {` ${name}`}
                 </NavLink>
               </h2>
             </div>
