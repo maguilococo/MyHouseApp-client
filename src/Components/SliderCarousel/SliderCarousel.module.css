@@ -62,3 +62,8 @@
   transition-duration: 1s;
   transform: scale(1.025);
 }
+.divImage {
+  width:50%;
+  margin: auto;
+  text-align: center;
+}

@@ -102,7 +102,7 @@ function PostDetails() {
             </div>
           </article>
           <article className={styles.facilities_container}>
-            <h3 className={styles.tit}>Facilities</h3>
+            <h3 className={styles.tit}>Instalaciones</h3>
             <div className={styles.facilities}>
               {postDetails.parking_lot && (
                 <div className={styles.facility}>

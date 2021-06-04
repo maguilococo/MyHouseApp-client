@@ -3,7 +3,10 @@
   flex-wrap: wrap;
   margin: 4% 4%;
   width: 90%
-  }
+}
+.status {
+  margin: auto;
+}
 .status h4{
   padding: 5px;
   border: 2px solid var(--blue);
@@ -101,6 +104,7 @@
   margin: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-right: 1px solid var(--blackShadow);
 }
 .facilities_container {

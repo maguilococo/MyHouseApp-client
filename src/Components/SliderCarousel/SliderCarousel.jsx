@@ -8,6 +8,7 @@ import {
   rightArrow,
   leftArrow,
   image,
+  divImage,
 } from './SliderCarousel.module.css';
 
 const SliderCarousel = ({ elementsContainer }) => {
@@ -26,7 +27,7 @@ const SliderCarousel = ({ elementsContainer }) => {
 
   if (!elementsLength) {
     return (
-      <div>
+      <div className={divImage}>
         <img
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png'
           alt='no available'
