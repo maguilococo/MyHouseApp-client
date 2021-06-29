@@ -82,3 +82,22 @@
   position: relative;
   top: 4px !important;
 }
+
+@media only screen and (max-width: 768px) {
+  .ctn {
+    margin: 6%;
+    width: 35px;
+    height: 35px;
+  }
+  .ctn label{
+    font-size: 1em;
+  }
+  .nav{
+    width: 35px;
+    height: 35px;
+  }
+
+  .checkbox:checked ~ label {
+    font-size: 1em;
+  }
+}

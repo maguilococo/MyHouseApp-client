@@ -18,7 +18,7 @@
 }
 
 .field label{
-    font-size: 1em;
+    font-size: 1em !important;
     color: var(--white);
     margin-bottom: 1rem;
     margin-top: 1em;
@@ -143,5 +143,18 @@
     .field select, .field textarea {
       font-size: 0.7rem;
       padding: 0;
+    }
+
+    .field label{
+        font-size: 0.8rem !important;
+    }
+
+    .pdanger {
+      font-size: 0.7rem;
+    }
+
+    .confirm {
+        font-size: 0.5rem !important;
+        height: 4em;
     }
   }

@@ -33,3 +33,14 @@
   color: var(--white);
   font-size: 1em;
 }
+
+@media only screen and (max-width: 768px) {
+  .container_field_image {
+    width: 17.5rem;
+    height: 8.75rem;
+    border: var(--blue) dashed 0.3rem;
+  }
+  .container_field_image label {
+    font-size: 0.45rem;
+  }
+}
