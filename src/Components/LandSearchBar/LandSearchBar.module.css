@@ -1,65 +1,116 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
 .ctn{
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 25%;
     top: 30%;
     background-color: rgba(255, 246, 246, 0.75);
-	width: 800px;
+	width: 54%;
     z-index: 10;
-	padding: 20px;
+	padding: 2%;
 	border-radius: 15px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.title {
+.ctn2 {
     display: flex;
-    padding: 20px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.ctn .title {
+    display: flex;
+    padding: 1em;
     margin: 0 30px 30px 0;
 }
 
-.title h2 {
-    font-size: 40px;
+.ctn .title h2 {
+    font-size: 2.4em;
     color: rgb(6, 76, 104);
 }
 
-.form {
+.ctn .form {
     display: flex;
     margin: 0 0 10px 0 
 }
 
-.form input {
+.ctn .form input {
     outline: 0;
 	border: 0;
 	padding: 20px;
     font-family: 'Poppins';
 }
 
-.input {
+.ctn .input {
 	border-radius: 40px 0 0 40px;
-    width: 500px;
-    
+    width: 50em;
 }
 
-.btn1 {
+.ctn .btn1 {
     border-radius: 0 40px 40px 0;
     background-color: var(--light-blue);
     color: var(--white);
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
 }
 
-.link {
+.ctn .link {
     margin: 0 0 0 20px;
 }
 
-.btn2 {
+.ctn .form .btn2 {
     border-radius: 40px;
     background-color: rgb(255, 115, 0);
     color: var(--white);
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
+    outline: 0;
+	border: 0;
+	padding: 1em;
+    font-family: 'Poppins';
+    height: 100%;
 }
 
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: 100%;
+    }
+    .ctn {
+        width: 90%;
+        height: 25%;
+        left: 5%;
+    }
+    .ctn2 {
+        width: 100%;
+    }
+    .ctn .title {
+        width: 100%;
+        height: 100%;
+        margin: 2% 0;
+        justify-content: center;
+    }
+    .ctn .title h2{
+        font-size: 1.3em;
+    }
+    .ctn .form input {
+        font-size: 0.7em;
+        padding: 0 2%;
+    }
+    
+    .btn1, .ctn .form .btn2 {
+        font-size: 0.6em;
+    }
+}

@@ -5,10 +5,18 @@
     background-color: var(--dark);
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 2.8%;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
 }
 
 .link {
@@ -21,13 +29,29 @@
 .title{
     display: flex;
     color: var(--white);
-    font-size: 17px;
-    margin-bottom: 10px;
-    justify-content: center;
+    font-size: 1.1em;
+    margin: 1em 0;
 }
 
 .disclaimer{
     display: flex;
     color: rgba(255,255,255,0.5);
-    font-size: 13px;
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        align-self: auto;
+    }
+    .title{
+        font-size: 0.8em;
+        justify-content: space-between;
+    }
+    .link {
+        margin: 0
+    }
+    .disclaimer{
+        font-size: 0.7em;
+    }
+    
 }
