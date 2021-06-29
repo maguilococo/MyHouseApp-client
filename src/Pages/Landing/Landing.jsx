@@ -60,7 +60,7 @@ const Landing = () => {
 	});
 
 	return (
-        <>
+        <div className={style.ctn}>
 		<div className={style.ContenedorPrincipal}>
 			<div className={style.ContenedorSlideshow} ref={slideshow}>
                 <div className={style.Slide} >
@@ -86,10 +86,10 @@ const Landing = () => {
                 </div>             
             </div>
             </div>
-            <div>
+            <div className={style.searchBar}>
                 <LandSearchBar />
             </div>
-        </>
+        </div>
 	);
 }
 
