@@ -184,14 +184,51 @@
   transition: all 0.3s ease-in-out !important;
 }
 
-@media only screen and (max-width: 430px) {
-.ctn {
-  width: 100%;
-  font-size: 0.7rem;
-}
+@media only screen and (max-width: 768px) {
+  .steps-content {
+    width: 100%;
+    margin: 5%;
+  }
+  #content{
+    padding: 5%;
+  }
+  .ctn {
+    width: 100%;
+    font-size: 0.3rem;
+  }
 
-.ctn .title {
-  font-size: 1.8rem;
-}
+  .ctn .title {
+    font-size: 1.5rem;
+  }
+  .progressbar li {
+    font-size: 0.5em;
+  }
 
+  .progressbar li:after {
+    left: -22%;
+  }
+  #backBtn {
+    font-size: 0.6rem;
+    margin-right: 60% !important;
+    margin-top: -4.2em !important;
+  }
+
+  .nextBtn {
+    font-size: 0.6rem !important;
+    margin-left: 65%;
+  }
+
+  #buttonId {
+    margin-left: 60%;
+  }
+  
+  #buttonId button{
+    height: 2em !important;
+    width: 10em !important;
+    font-size: 0.6rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 }

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import useCreatePost from './hooks/useCreatePost';
 import axios from 'axios';
-import imagen from '../../images/step_form/green.jpg'
 import './step.css';
 
 
@@ -42,13 +41,13 @@ const ProgressBar = () => {
             createCheckoutButton(r.data);
           })
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [current, infoPlan]);
     //====================Mercadopago=======================================================
 
 
   return (
       <div className='step_form'>
-        {/* <img alt='img' className='backImg' src={imagen} /> */}
         <div className='steps-content' style={{opacity:'150%'}}>
           <ul className='progressbar'>
             <span current={current}>
