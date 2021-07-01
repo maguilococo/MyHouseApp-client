@@ -31,8 +31,8 @@ const ProgressBar = () => {
       };
     }
   }
-
-    useEffect(() => {
+  
+  useEffect(() => {
       if(current === 5) {
         localStorage.setItem('post', JSON.stringify(postDetails))
         // axios.post(`http://localhost:3001/mercadopago`, infoPlan)
@@ -40,20 +40,21 @@ const ProgressBar = () => {
           .then((r) => {
             createCheckoutButton(r.data);
           })
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [current, infoPlan]);
-    //====================Mercadopago=======================================================
-
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [current, infoPlan]);
+      //====================Mercadopago=======================================================
+      
 
   return (
       <div className='step_form'>
         <div className='steps-content' style={{opacity:'150%'}}>
           <ul className='progressbar'>
             <span current={current}>
-              {steps.map((item, index) => (
-                <li key={item.title} id={index}>{item.title}</li>
-              ))}
+              {window.screen.width < 768 ? steps.map((item, index) => (
+                <li key={item.title} id={index}>{current === index ? item.title : null}</li>
+                )) : steps.map((item, index) => ( <li key={item.title} id={index}>{item.title}</li> ))
+              }
             </span>
           </ul>
           <div id='content'>{steps[current].content}</div>

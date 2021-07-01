@@ -308,7 +308,7 @@ class LocationSearchModal extends React.Component {
               )
 
         return (
-            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }} className={this.props.edit === 'edit' ? s.ctnMap : null}>
+            <div style={{ margin: 'auto', display: 'flex', justifyContent:'flex-end', alignItems:'center', width:'100%'/* , background:'orange'  */}} className={this.props.edit === 'edit' ? s.ctnMap : null}>
              <div className={this.props.edit=== 'edit' ? s.divEdit : style.col}>
                 <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Ciudad</label>
@@ -326,12 +326,8 @@ class LocationSearchModal extends React.Component {
                     <label>Dirección</label>
                     <textarea disabled  type='text' value={this.state.street_number} className={this.props.edit=== 'edit' ? s.textArea : null} />
                 </div>
-                {/* <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
-                    <label>Estrato</label>
-                    <input type='number' name="stratum" onChange={this.onChange} value={this.state.stratum} min="0" max="6" />
-                </div>   */}
              </div>
-            <div className={this.props.edit=== 'edit' ? `{s.fieldEdit} ${s.check}` : style.field}>
+            <div className={this.props.edit=== 'edit' ? `${s.fieldEdit} ${s.check}` : style.field}>
                 <label htmlFor="allowAddress">Prefiero ocultar mi ubicación
                     <input type="checkbox" className={style.allowAddress} name="allowAddress"
                         checked = {!this.state.allowAddress}
@@ -345,10 +341,10 @@ class LocationSearchModal extends React.Component {
                 <div className={style.ctnMap}>
                     <AsyncMap
                         mapElement={
-                            <div style={{ width: '100%', height: `100%` }} />
+                            <div style={{ width: '100%', height: `100%` }} className={styleEdit.map} />
                         }
                         containerElement={
-                            <div style={{ height: this.state.height, margin: '5% 0' }} />
+                            <div style={{ height: this.state.height, margin: '5% 0' }} className={styleEdit.ctn} />
                         }
                     />
 

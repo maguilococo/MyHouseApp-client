@@ -23,14 +23,31 @@
   justify-content: space-between;
   width: 50%;
   height: 100%;
-  text-align: center;
   margin: auto 0;
 }
 
 .divInfo h4{
-  margin: 10px 0;
+  margin: 1em 0;
 }
 
 .divInfo h1{
+  text-align: center;
   margin: 15px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .ctn {
+    width: 83%;
+    font-size: 60%;
+    padding: 8%;
+  }
+  .divInfo {
+    width: 70%;
+  }
+  .divImg {
+    width: 30%;
+  }
+  .img {
+    width: 90%;
+  }
 }

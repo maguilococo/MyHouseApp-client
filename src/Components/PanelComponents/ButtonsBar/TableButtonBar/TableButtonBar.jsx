@@ -15,13 +15,15 @@ function openFilters() {
 function TableButtonBar({ rol, path }) {
   return (
     <div className={style.ctn}>
-      <div className={style.elementsCtn}>
-        <NavLink to={`/panel/${rol}`}>
-          <label className={style.elementsCtn}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-            {' Inicio'}
-          </label>
-        </NavLink>
+      <div className={style.elementsCtn}>  
+        <div className={style.back}>
+          <NavLink to={`/panel/${rol}`}>
+            <label>
+              <FontAwesomeIcon icon={faArrowLeft} />
+              <span className={style.text}>Inicio</span>
+            </label>
+          </NavLink>
+        </div>        
         <div className={style.btnCtn}>
           {((rol !== 'user' && path !== 'post') && path !== 'booking') &&
             <NavLink to={`/panel/${path}/create`} className={style.btnBar}>

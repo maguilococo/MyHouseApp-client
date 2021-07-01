@@ -91,8 +91,34 @@
 
 
 
-
-
 .noFacilities{
     display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .field {
+        width: 100%;
+        margin: 3% 0;
+        font-size: 0.8em;
+    }
+     .btn{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 0.7rem !important;
+        border-radius: 20px;
+        width: 6em;
+        height: 1.8em;
+        background: var(--white) !important;
+        border: 1.5px solid var(--blue) !important;
+        color: var(--blue) !important;
+      }
+      .btnReset .btn:hover {
+        background: var(--dark) !important;
+        box-shadow: 1px 1px 0px #bdbdbd !important;
+        transition: all 0.3s ease-in-out;
+        border: 1.5px solid var(--dark) !important;
+        color: var(--white) !important;
+      }
 }

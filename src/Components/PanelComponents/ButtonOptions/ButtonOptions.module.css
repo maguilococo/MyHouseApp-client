@@ -40,3 +40,15 @@
 .NavLink:hover {
   color: var(--blue);
 }
+
+@media only screen and (max-width: 768px) {
+  .ctn {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .ctn {
+    font-size: 100%;
+  }
+}

@@ -145,7 +145,10 @@ article > img {
 }
 @media only screen and (max-width: 799px) {
   .container {
-    width: 95%
+    width: 83%;
+    font-size: 70%;
+    padding: 8%;
+    margin: 8% auto;
   }
   .ctnDetails {
     width: 100%;
@@ -155,9 +158,8 @@ article > img {
     height: 45vh;
   }
   .divTitle {
-    margin: 5px auto;
+    margin: 10px auto;
     width: 70%;
-
   }
   .tour_schedule {
       margin: 5px auto;
@@ -187,7 +189,13 @@ article > img {
 }
 @media only screen and (max-width: 580px) {
   .container {
-    width: 97%
+    width: 97%;
+  }
+  .title {
+    margin: 0 auto 10%;
+  }
+  .status {
+    margin: 2% auto;
   }
   .details {
     flex-direction: column;

@@ -6,7 +6,7 @@ function Footer() {
     <div className={style.main}>
       <div className={style.ctn}>
         <div className={style.title}>
-            &copy;{new Date().getFullYear()} MyHouseApp |&nbsp;<a href='/about' className={style.link}>Sobre nosotros&nbsp;</a> | <a className={style.link} href="mailto:myhouseapp.col@gmail.com">&nbsp;Contacto</a>
+            &copy;{new Date().getFullYear()} MyHouseApp &nbsp;|&nbsp;<a href='/about' className={style.link}>&nbsp;Sobre nosotros&nbsp;</a> | <a className={style.link} href="mailto:myhouseapp.col@gmail.com">&nbsp;Contacto</a>
         </div>
         <div className={style.disclaimer}>
               MyHouseApp es un proyecto realizado para el bootcamp de programación SoyHenry. Toda la información presentada en esta página es ficticia.

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
   withRouter,
 } from 'react-router-dom';
 import Home from './Pages/Home/Home';
@@ -14,7 +13,6 @@ import About from './Pages/About/About';
 import Signin from './Pages/Signin/Signin';
 import PanelRoutes from './Pages/Panel/PanelRoutes';
 import NotFound from './Pages/NotFound/NotFound';
-import MercadoPago from './Components/MercadoPago/MercadoPago';
 import CreatePostContext from './Pages/NewPost/Contexts/CreatePostContext';
 import ProgressBar from './Pages/NewPost/ProgressBar';
 import ProtectedRoute from './Components/Auth0/ProtectedRoute/ProtectedRoute';
