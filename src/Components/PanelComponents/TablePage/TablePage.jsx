@@ -13,7 +13,7 @@ function TablePage({
 }) {
 
   return (
-    <>
+    <div className={style.ctn}>
       <h3 className={style.title}>{tableName}</h3>
       <table className={style.ctnList}>
         <thead>
@@ -21,6 +21,7 @@ function TablePage({
             {columns && (columns.map((col, index) => (
               <td key={index}>{col}</td>
             )))}
+            <td key={columns?.length+1}></td>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +44,7 @@ function TablePage({
           }
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
 

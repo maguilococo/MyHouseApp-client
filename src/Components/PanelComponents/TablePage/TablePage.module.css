@@ -5,13 +5,12 @@
   width: 95%;
   margin: 15px auto;
   background-color: var(--white);
-  text-align: justify;
   padding: 15px;
   box-shadow: 2px 4px 6px 3px var(--blackShadow);
 }
 
 .title {
-  margin: 0 3%;
+  margin: 1% 3%;
   font-size: 1.5em;
   text-transform: uppercase;
 }
@@ -20,4 +19,24 @@
 }
 .ctnList tr:hover{
   background-color: #dadada;
+}
+
+@media only screen and (max-width: 768px) {
+  .ctn {
+    font-size: 70%
+  }
+  .title{
+    margin: 4% 7%;
+  }
+
+  .ctn table{
+    font-size: 77%;
+    width: 90%;
+  }
+ 
+  .ctn tr td {
+    padding: 1%;
+    
+  }
+  
 }
