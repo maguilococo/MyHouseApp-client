@@ -122,3 +122,15 @@
 .noFacilities{
     display: none;
 }
+
+/* @media only screen and (max-width: 768px) {
+    .ctn{
+        width: 80%;
+        
+    }
+
+    .ctn input {
+        background-color: aqua;
+        width: min-content;
+    }
+} */

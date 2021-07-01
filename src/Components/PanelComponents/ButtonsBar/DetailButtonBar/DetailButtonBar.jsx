@@ -13,15 +13,14 @@ function DetailButtonBar({ rol, id, postOwnerId, path, userId, deleteAction }) {
   return (
     <div className={style.ctn}>
       <div className={style.elementsCtn}>
-        <Link to={`/panel/${rol}`} onClick={() => {
-          // !window.confirm(`¿Quieres descartar los cambios de ${element} con id ${id}?`) && console.log('no hagas nada');
-        }}
-        >
-          <label>
-            <FontAwesomeIcon icon={faArrowLeft} />
-            {' Panel'}
-          </label>
-        </Link>
+      <div className={style.back}>
+          <Link to={`/panel/${rol}`}>
+            <label>
+              <FontAwesomeIcon icon={faArrowLeft} />
+              <span className={style.text}>Panel</span>
+            </label>
+          </Link>
+        </div>
         {(postOwnerId===userId || !postOwnerId) &&
           /* si no soy el dueño de la publicación no puedo editarla ni eliminarla 
           userId es el de la sesión, id puede ser un booking o post o user

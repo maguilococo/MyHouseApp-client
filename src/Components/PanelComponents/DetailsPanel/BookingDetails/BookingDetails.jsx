@@ -27,7 +27,7 @@ export default function BookingDetails({ id }) {
           <img className={styles.logo} src={Logo} alt='logo' />
           <div className={styles.headerText}>
             <h1>Booking</h1>
-            <h3>my house app s.r.l</h3>
+            <h3>my house app</h3>
           </div>
 
         </div>
@@ -41,8 +41,6 @@ export default function BookingDetails({ id }) {
           <div>
             <label>Lugar: </label>&nbsp;&nbsp;
             <label> {booking.post.city}</label>
-          </div>
-          <div>
             <label>Estado de la publicación: </label>&nbsp;&nbsp;
             <label>{booking.post.status}</label>
           </div>
@@ -51,8 +49,6 @@ export default function BookingDetails({ id }) {
           <div>
             <label>Nombre</label>&nbsp;&nbsp;
             <label>{booking.owner.name}</label>
-          </div>
-          <div>
             <label>Telefono</label>&nbsp;&nbsp;
             <label>{booking.owner.phone}</label>
           </div>
@@ -65,12 +61,8 @@ export default function BookingDetails({ id }) {
           <div>
             <label>Nombre</label>&nbsp;&nbsp;
             <label>{booking.interested.name}</label>
-          </div>
-          <div>
             <label>Telefono</label>&nbsp;&nbsp;
             <label>{booking.interested.phone}</label>
-          </div>
-          <div>
             <label>Email</label>&nbsp;&nbsp;
             <label>{booking.interested.email}</label>
           </div>

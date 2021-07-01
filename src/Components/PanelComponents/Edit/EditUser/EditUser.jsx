@@ -1,9 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
-// import { useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEraser } from '@fortawesome/free-solid-svg-icons';
 import { getUserDataService, editUserService, addUserService } from '../../../../Services/user.service';
@@ -79,28 +77,16 @@ function EditUser({ session, id, action }) {
       })
     } else {
       if (action === 'edit') {
-       /*  if (errors === '') {
-          <Link to="/panel" />
-          return Swal.fire({
-            icon: 'info',
-            title: `No se han realizado modificaciones`,
-            showConfirmButton: false,
-            timer: 1500
-          })
-        } else { */
           return editUserService(id, input).then(  () => {
             // console.log('EDIT USER ',input)
             Swal.fire({
               icon: 'success',
               title: `Usuario editado correctamente `,
               showConfirmButton: true,
-              // timer: 2000
             })
-            // history.push(`/panel/detail/user/${session.id}`);
           })
           .catch(e=>console.log(e));
 
-      //  }
       } else if (action === 'create') {
         if (errors === '') {
           return Swal.fire({

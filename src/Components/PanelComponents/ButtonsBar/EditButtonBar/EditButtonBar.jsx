@@ -8,15 +8,14 @@ function EditButtonBar({ rol, handleSubmit, element, id }) {
   return (
     <div className={style.ctn}>
       <div className={style.elementsCtn}>
-        <Link to={`/panel/${rol}`} onClick={() => {
-           // !window.confirm(`¿Quieres descartar los cambios de ${element} con id ${id}?`) && console.log('no hagas nada');
-          }}
-        >
-          <label>
-            <FontAwesomeIcon icon={faArrowLeft} />
-            {' Panel'}
-          </label>
-        </Link>
+        <div className={style.back}>
+          <Link to={`/panel/${rol}`}>
+            <label>
+              <FontAwesomeIcon icon={faArrowLeft} />
+              <span className={style.text}>Panel</span>
+            </label>
+          </Link>
+        </div>
         <div className={style.btnCtn}>
         <Link to={`/panel/${rol}`} className={style.btnBar} onClick={() => {
            // !window.confirm(`¿Quieres descartar los cambios de ${element} con id ${id}?`) && console.log('no hagas nada');

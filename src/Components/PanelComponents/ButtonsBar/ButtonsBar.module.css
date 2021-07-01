@@ -3,23 +3,33 @@
   background-color: var(--white);
   padding: 10px;
   box-shadow: 1px 1px 6px 1px var(--blackShadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .ctn label{
-  margin-left: 5%;
   cursor: pointer;
   text-decoration: none;
   color: var(--blue);
+}
+
+.back .text{
+  margin-left: 5px;
 }
 
 .elementsCtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .btnCtn {
   display: flex;
   width: 300px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .btnBar {
@@ -45,22 +55,36 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    font-size: 0.7em;
+    margin-left: 1%;
+  }
+  .ctn{
+    width: 100%;
+    padding: 2% 0;
+  }
 
   .btnBar {
-    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.7rem;
     border-radius: 20px;
-    padding: 4%;
-    width: 8em;
-    height: 3em;
+    width: 7.5em;
+    height: 2em;
     background: var(--white);
-    border: 2px solid var(--blue);
+    border: 1.5px solid var(--blue);
     color: var(--blue)
   }
   .btnBar:hover {
     background: var(--dark);
     box-shadow: 1px 1px 0px #bdbdbd;
     transition: all 0.3s ease-in-out;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
     color: var(--white);
   }
 

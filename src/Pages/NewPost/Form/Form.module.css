@@ -116,14 +116,14 @@
 }
 
 .confirm {
-    width: 25%;
+    width: 30%;
     height: 2em;
     cursor: pointer;
     border-radius: 10px;
     font-size: 1em;
     margin-top: 10px;
     font-family: 'Poppins';
-    margin-left: 300px !important;
+    margin-left: 400px !important;
     color: var(--white);
     border: 2px solid var(--blue);
     background: var(--blue);
@@ -137,7 +137,11 @@
     transition: all 0.3s ease-in-out;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 768px) {
+    .autocomplete {
+        /* background-color: yellow; */
+        width: 100%;
+    }
 
     .field input[type='text'], .field input[type='number'],
     .field select, .field textarea {
@@ -156,5 +160,6 @@
     .confirm {
         font-size: 0.5rem !important;
         height: 4em;
+        margin-left: 200px !important;
     }
   }

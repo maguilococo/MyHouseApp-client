@@ -211,15 +211,6 @@
   /* border: 2px solid green; */
 }
 
-
-
-
-
-
-
-
-
-
 .ctn input:disabled {
     cursor: auto;
     background-color: rgba(128, 128, 128, 0.239);
@@ -261,4 +252,96 @@
     background: var(--dark);
     box-shadow: var(--blackhadow);
     transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .ctn input {
+    font-size: 0.8em;
+    margin-right: -100px;
+    width: 40%;
+  }
+  .ctn .field{
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+  }
+
+  .fieldPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .fieldPrice label,  .fieldPrice input{
+    margin-left: -80px;
+  }
+
+  .fieldDescription label{
+    margin-right: 20px;
+  }
+
+  .ctn select {
+    width: 10em;
+    margin-left: 1em;
+    font-size: 0.8em;
+  }
+
+  .ctn label {
+    font-size: 0.8em;
+  }
+
+  .ctn textarea {
+    width: 10%;
+    font-size: 0.8em;
+  }
+
+  .divMap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .divEdit {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 15%;
+  }
+  
+  .ctnMap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divTextArea{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .divTextArea textarea{
+    margin-right: -60px;
+    width: 100% !important;
+  }
+  .fieldEdit {
+    width: 100%;
+  }
+
+  .check{
+    width: 100%;
+    margin-right: -90px !important;
+  }
+
+  .fieldEdit input{
+    width: 100% !important;
+    margin-right: -150px;
+  }
 }

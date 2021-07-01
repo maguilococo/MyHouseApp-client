@@ -77,7 +77,7 @@
   content: '';
   background-color: var(--white);
   top: 15px;
-  left: -42.5%;
+  left: -42%;
   position: absolute;
   z-index: -1;
 }
@@ -201,7 +201,7 @@
     font-size: 1.5rem;
   }
   .progressbar li {
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 
   .progressbar li:after {

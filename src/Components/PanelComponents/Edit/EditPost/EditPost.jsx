@@ -4,9 +4,6 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEraser } from '@fortawesome/free-solid-svg-icons';
 import {
   getPostService,
   editPostService,
@@ -83,14 +80,6 @@ function EditPosts({ id, action, session, location, addLocation }) {
       errors.premium = 'El plan contratado es requerido';
     } else if (!input.status && isAdmin) {
       errors.status = 'El status es requerido';
-      //} else if (!input.department) {
-      //errors.depatment = 'El deparmento es requerido';
-      // } else if (!input.city) {
-      //   errors.city = 'La ciudad es requerida';
-      // } else if (!input.street_number) {
-      //   errors.street_number = 'La dirección es requerida';
-      // } else if (!input.neighborhood) {
-      //   errors.neighborhood = 'El barrio es requerido';
     } else if (!input.price) {
       errors.price = 'El precio es requerido';
     } else if (!input.prop_type) {
@@ -195,29 +184,6 @@ function EditPosts({ id, action, session, location, addLocation }) {
 
   valueTypes(input);
 
-/*   function resetForm(e) {
-    e.preventDefault();
-    setInput({
-      premium: '',
-      post_name: '',
-      description: '',
-      stratum: '',
-      price: '',
-      m2: '',
-      rooms: '',
-      years: '',
-      pool: false,
-      backyard: false,
-      bbq: false,
-      gym: false,
-      parking_lot: false,
-      garden: false,
-      elevator: false,
-      security: false,
-    });
-    document.getElementById('form').reset();
-  } */
-
   const [display, setDisplay] = useState(false);
   return (
     <div className={style.ctn}>
@@ -245,29 +211,6 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 )}
               </div>
             </div>
-            {/* {isAdmin && (
-              <>
-                <div className={style.field}>
-                  <label htmlFor='premium'> Plan contratado</label>
-                  <select
-                    className={style.selectFilter}
-                    name='premium'
-                    value={input.premium}
-                    onChange={handleChange}
-                  >
-                    <option key='1' value={false}>
-                      Basic
-                    </option>
-                    <option key='2' value={true}>
-                      Premium
-                    </option>
-                  </select>
-                </div>
-                {errors.premium && (
-                  <p className={style.pdanger}>{errors.premium}</p>
-                )}
-              </>
-            )} */}
             {isAdmin && (
               <>
                 <div className={style.field}>
@@ -483,19 +426,9 @@ function EditPosts({ id, action, session, location, addLocation }) {
                 </section>
                 </div>
             </div>
-            {/* <div className={style.btnReset}>
-              <button
-                className={style.btn}
-                type='button'
-                onClick={(e) => resetForm(e)}
-              >
-                <FontAwesomeIcon icon={faEraser} />
-                {'  Borrar'}
-              </button>
-            </div> */}
-            <div className={style.divMap}>
+            {/* <div className={style.divMap}> */}
               <FormMap edit={"edit"} />
-            </div>
+            {/* </div> */}
           </form>
         </>
       )}

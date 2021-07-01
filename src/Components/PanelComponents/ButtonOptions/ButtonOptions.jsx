@@ -29,11 +29,11 @@ function ButtonOptions({
       <nav className={style.nav}>
         <NavLink to={`/panel/detail/${buttonPath}/${id}`} className={style.NavLink}>
           <FontAwesomeIcon icon={faEye} />
-          {' Ver'}
+          {window.screen.width > 568 && <span className={style.text}>{' Ver'}</span>}
         </NavLink>
         <NavLink to={`/panel/${buttonPath}/${id}/edit`} className={style.NavLink}>
           <FontAwesomeIcon icon={faEdit} />
-          {' Editar'}
+          {window.screen.width > 568 && <span className={style.text}>{' Editar'}</span>}
         </NavLink>
         <span className={style.NavLink} onClick={() => {
           Swal.fire({
@@ -59,7 +59,7 @@ function ButtonOptions({
         }}>
 
           <FontAwesomeIcon icon={faTrashAlt} />
-          {' Eliminar'}
+          {window.screen.width > 468 && <span className={style.text}>{' Eliminar'}</span>}
         </span>
       </nav>
     </div>
