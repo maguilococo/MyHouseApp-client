@@ -1,8 +1,8 @@
 # Client
 
-<p align='left'>
+<a href="https://my-house-app-one.vercel.app/" target="_blank">
     <img src='https://github.com/myhouseapp/client/blob/main/src/images/circulo2.png?raw=true'  width="140" height="140" />
-</p>
+</a>
 
 
 
