@@ -7,12 +7,12 @@
 
 
 
-## Find you next home
+## Find you next home 🏚️
 Visit our website and be ready to find the home you dream about!
 In My House App you will have the opportunity to find easily the place you are looking for, arrange your visit, contact the owner and share the place with your ones to ask their opinion. Don't miss any opportunity, visit now!
 
 
-## Used technologies in the client server :computer: 
+## Used technologies :computer: 
 
 * __Javascript__
 * __React__
