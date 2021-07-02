@@ -51,7 +51,7 @@ email myhouseapp.col@gmail.com for credentials files >> .env
       <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/LandPage.png" alt="me" width="280" height="140"/>
     </a>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
-      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Home.png" alt="me" width="280" height="140"/>
+      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Home.png" alt="home" width="280" height="140"/>
     </a>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
       <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Details.png" alt="me" width="280" height="140"/>
