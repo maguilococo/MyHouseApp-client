@@ -14,7 +14,7 @@ In My House App you will have the opportunity to find easily the place you are l
 
 ## Used technologies :computer: 
 
-* __Javascript__
+* [__Javascript__](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * __React__
 * __Redux__
 * __Node.js__
