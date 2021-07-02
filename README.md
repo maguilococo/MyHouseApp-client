@@ -3,14 +3,14 @@
 <a href="https://my-house-app-one.vercel.app/" target="_blank">
     <img src='https://github.com/myhouseapp/client/blob/main/src/images/circulo2.png?raw=true'  width="140" height="140" />
 </a>
+
+## Find you next home 🏚️
+**[Visit our website and be ready to find the home you dream about!](https://my-house-app-one.vercel.app/)**
 <p align="center">
     <a href="https://www.youtube.com/watch?v=wGsvqJFBktY" target="_blank">
         <img align="center" src='https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Video.png'  width="400" height="180" />
     </a>
 </p>
-
-## Find you next home 🏚️
-**[Visit our website and be ready to find the home you dream about!](https://my-house-app-one.vercel.app/)**
 
 In My House App you will have the opportunity to find easily the place you are looking for, arrange your visit, contact the owner and share the place with your ones to ask their opinion. Don't miss any opportunity, **[visit now!](https://my-house-app-one.vercel.app/)**
 
