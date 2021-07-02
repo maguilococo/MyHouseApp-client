@@ -8,7 +8,7 @@
 **[Visit our website and be ready to find the home you dream about!](https://my-house-app-one.vercel.app/)**
 <p align="center">
     <a href="https://www.youtube.com/watch?v=wGsvqJFBktY" target="_blank">
-        <img align="center" src='https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Video.png'  width="400" height="180" />
+        <img align="center" src='https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Video.png'  width="420" height="200" />
     </a>
 </p>
 
