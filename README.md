@@ -31,7 +31,7 @@ In My House App you will have the opportunity to find easily the place you are l
 * __Heroku__ >> for the Back-end
 * __Vercel__ >> for the Front-end
 
-## Install :feet:
+## Install 🛠️
 
 ```
 git clone https://github.com/myhouseapp/client.git
