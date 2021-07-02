@@ -8,28 +8,29 @@
 
 
 ## Find you next home 🏚️
-Visit our website and be ready to find the home you dream about!
-In My House App you will have the opportunity to find easily the place you are looking for, arrange your visit, contact the owner and share the place with your ones to ask their opinion. Don't miss any opportunity, visit now!
+**[Visit our website and be ready to find the home you dream about!](https://my-house-app-one.vercel.app/)**
+In My House App you will have the opportunity to find easily the place you are looking for, arrange your visit, contact the owner and share the place with your ones to ask their opinion. Don't miss any opportunity, **[visit now!](https://my-house-app-one.vercel.app/)**
 
 
 ## Used technologies :computer: 
 
 * [__Javascript__](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* __React__
-* __Redux__
-* __Node.js__
-* __Express__
-* __PostrgeSQL__
-* __Sequelize__
-* __Auth0__
-* __Google Cloud__
-* __Mercado Pago__
-* __Nodemailer__
+* [__React__](https://reactjs.org/)
+* [__Redux__](https://redux.js.org)
+* [__Node.js__](https://nodejs.org)
+* [__CSS__](https://www.w3schools.com/css/)
+* [__Express__](https://expressjs.com)
+* [__PostrgeSQL__](https://www.postgresql.org)
+* [__Sequelize__](https://sequelize.org/)
+* [__Auth0__](https://auth0.com/)
+* [__Google Cloud__](https://cloud.google.com/)
+* [__Mercado Pago__](https://www.mercadopago.com.co/)
+* [__Nodemailer__](https://nodemailer.com/about/)
 
 ## Deploy
-* __RS of AWS__ >> for the Data Base
-* __Heroku__ >> for the Back-end
-* __Vercel__ >> for the Front-end
+* [__RDS of AWS__](https://aws.amazon.com/es/rds/) >> for the Data Base
+* [__Heroku__](https://www.heroku.com/) >> for the Back-end
+* [__Vercel__](https://vercel.com/dashboard) >> for the Front-end
 
 ## Install 🛠️
 
