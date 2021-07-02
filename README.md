@@ -34,7 +34,7 @@ In My House App you will have the opportunity to find easily the place you are l
 * [__Vercel__](https://vercel.com/dashboard) >> for the Front-end
 
 ## Install 🛠️
-
+--> repository <a href="https://github.com/myhouseapp/client" target="_blank">client</a> & </a><a href="https://github.com/my-house-app/api" target="_blank">server</a>
 ```
 git clone https://github.com/myhouseapp/client.git
 git clone https://github.com/my-house-app/api
@@ -42,6 +42,8 @@ npm install >> both repos
 npm start >> both repos
 email myhouseapp.col@gmail.com for credentials files >> .env
 ```
+
+
 
 ## Previews 🏘️🏚️🏙️
   <p>
