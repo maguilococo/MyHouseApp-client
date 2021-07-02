@@ -48,16 +48,22 @@ email myhouseapp.col@gmail.com for credentials files >> .env
 ## Previews 🏘️🏚️🏙️
   <p>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
+      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/LandPage.png" alt="me" width="280" height="140"/>
+    </a>
+    <a href="https://my-house-app-one.vercel.app/" target="_blank">
       <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Home.png" alt="me" width="280" height="140"/>
     </a>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
       <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/Details.png" alt="me" width="280" height="140"/>
     </a>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
-      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/admin.png" alt="me" width="280" height="140"/>
+      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/loginMobile.png" alt="me" width="110" height="200"/>
     </a>
     <a href="https://my-house-app-one.vercel.app/" target="_blank">
-      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/map.png" alt="me" width="280" height="100"/>
+      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/newPost.png" alt="me" width="280" height="140"/>
+    </a>
+    <a href="https://my-house-app-one.vercel.app/" target="_blank">
+      <img  align="center" src="https://github.com/maguilococo/maguilococo/blob/main/MyHouseApp/AdminMobile.png" alt="me" width="110" height="200"/>
     </a>
   </p>
 
