@@ -308,7 +308,7 @@ class LocationSearchModal extends React.Component {
               )
 
         return (
-            <div style={{ margin: 'auto', display: 'flex', justifyContent:'flex-end', alignItems:'center', width:'100%'/* , background:'orange'  */}} className={this.props.edit === 'edit' ? s.ctnMap : null}>
+            <div style={{ margin: 'auto', display: 'flex', flexDirection:'column', justifyContent:'flex-end', width:'100%'/* , background:'orange'  */}} className={this.props.edit === 'edit' ? s.ctnMap : null}>
              <div className={this.props.edit=== 'edit' ? s.divEdit : style.col}>
                 <div className={this.props.edit=== 'edit' ? s.fieldEdit : style.field}>
                     <label>Ciudad</label>
