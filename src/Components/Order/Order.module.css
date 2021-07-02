@@ -53,14 +53,22 @@ select::-ms-expand {
 
 
  @media screen and (max-width: 768px) {
+    .selectMenu {
+        width: 7.5em;
+        height: 2em;
+        font-size: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .selectNav select {
-        padding: 1px .2em;
-        font-size: 0.9em;
+        padding: 5%;
+        font-size: 0.7rem;
     }
     .selectNav option {
-        font-size: 0.9em;
+        font-size: 0.7rem;
     }
     .selectMenu::after {
-        padding: 0 0.4em;
+        padding: 0 6%;
     }
  }
